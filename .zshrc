@@ -95,7 +95,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	# nvm
-	# command-not-found
+	command-not-found
 	zsh-syntax-highlighting
   zsh-autosuggestions
 	history-substring-search
@@ -125,30 +125,37 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+
 # Example aliases
 alias zshconf="code ~/.zshrc"
 alias config="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
-
 # for dotfiles
 alias dotconf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 # run this : dotconf config --local status.showUntrackedFiles no 
 
-xrandr --output eDP-1 --set "scaling mode" "Full" 
 alias xampp="sudo /opt/lampp/xampp"
-
 alias androidStudio="cd /mnt/D_partition/Download/Dev/android-studio-ide-193\ 6626763-linux/android-studio/bin && ./studio.sh"
 # alias emulator=$ANDROID_SDK/tools/emulator
-
+# emulator  @Pixel_2_API_29 
 alias vsc="code ."
-# alias dev="cd /mnt/D_partition/Download/Dev"
 mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
-dev() {cd "/mnt/D_partition/Download/Dev/"$1}
+dev() {
+	if [ $1=="now" ];then
+		echo "starting..."
+		/mnt/D_partition/Download/Dev/other/on_start.sh > /dev/null
+	else
+		cd "/mnt/D_partition/Download/Dev/"$1
+	fi
+}
+	# does the same as alias dev="cd /mnt/D_partition/Download/Dev"
+	# with an arg ex: dev react or dev now to launch script 
 alias wifi='nmcli c up id "Gnet-309650"'
 alias vpnc='sudo protonvpn connect -f'
 alias vpnd='sudo protonvpn disconnect'
-# emulator  @Pixel_2_API_29 
 
 #welcome msg
 quotes-cli | cowthink -f tux | lolcat
 # fortune -s | cowthink -f tux | lolcat
+# fix display
+xrandr --output eDP-1 --set "scaling mode" "Full" 
