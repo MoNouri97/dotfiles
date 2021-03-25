@@ -111,11 +111,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -127,7 +127,7 @@ source $ZSH/oh-my-zsh.sh
 #
 
 # Example aliases
-alias zshconf="code ~/.zshrc"
+alias zshconf="vim ~/.zshrc"
 alias config="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 # for dotfiles
@@ -141,11 +141,13 @@ alias androidStudio="cd /mnt/D_partition/Download/Dev/android-studio-ide-193\ 66
 alias vsc="code ."
 mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 dev() {
-	if [ $1=="now" ];then
+	echo "$1 $2 $3"
+	if [ $1 ] && [ $1 = "now" ];then
 		echo "starting..."
-		/mnt/D_partition/Download/Dev/other/on_start.sh > /dev/null
+		/mnt/D_partition/Download/Dev/other/on_start.sh $2 $3 
+		# > /dev/null
 	else
-		cd "/mnt/D_partition/Download/Dev/"$1
+		cd "/mnt/D_partition/Download/Dev/"$1;
 	fi
 }
 	# does the same as alias dev="cd /mnt/D_partition/Download/Dev"
@@ -157,5 +159,5 @@ alias vpnd='sudo protonvpn disconnect'
 #welcome msg
 quotes-cli | cowthink -f tux | lolcat
 # fortune -s | cowthink -f tux | lolcat
-# fix display
+#fix display
 xrandr --output eDP-1 --set "scaling mode" "Full" 
