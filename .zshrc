@@ -24,14 +24,14 @@ export BW_SESSION="b11AtupzoYAH0SSieDrOmaEAIaUjzznoyvT7Lza6dtFbvkaXhckAu3ou0Q4ZC
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #  ZSH_THEME="random"
-ZSH_THEME="robbyrussell"
+#  ZSH_THEME="robbyrussell"
 # ZSH_THEME="kolo"
 # ZSH_THEME="awesomepanda"
 #  ZSH_THEME="pmcgee"
 #  ZSH_THEME="jispwoso"
 #  ZSH_THEME="amuse"
 #  ZSH_THEME="agnoster"
-# ZSH_THEME="powerlevel9k/powerlevel9k"
+ ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="myTheme"
 
 
@@ -97,8 +97,9 @@ plugins=(
 	# nvm
 	command-not-found
 	zsh-syntax-highlighting
-  zsh-autosuggestions
+	zsh-autosuggestions
 	history-substring-search
+	git-flow
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -114,7 +115,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -155,6 +156,7 @@ dev() {
 alias wifi='nmcli c up id "Gnet-309650"'
 alias vpnc='sudo protonvpn connect -f'
 alias vpnd='sudo protonvpn disconnect'
+alias androidDebug='/mnt/D_partition/Download/Dev/other/betterScrcpy.sh'
 
 #welcome msg
 quotes-cli | cowthink -f tux | lolcat
