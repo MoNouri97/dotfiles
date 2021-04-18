@@ -31,8 +31,9 @@ export BW_SESSION="b11AtupzoYAH0SSieDrOmaEAIaUjzznoyvT7Lza6dtFbvkaXhckAu3ou0Q4ZC
 #  ZSH_THEME="jispwoso"
 #  ZSH_THEME="amuse"
 #  ZSH_THEME="agnoster"
- ZSH_THEME="powerlevel9k/powerlevel9k"
+#  ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="myTheme"
+ZSH_THEME="my"
 
 
 # Set list of themes to pick from when loading at random
@@ -100,6 +101,7 @@ plugins=(
 	zsh-autosuggestions
 	history-substring-search
 	git-flow
+	vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,7 +127,8 @@ fi
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+
+
 
 # Example aliases
 alias zshconf="vim ~/.zshrc"
@@ -162,4 +165,7 @@ alias androidDebug='/mnt/D_partition/Download/Dev/other/betterScrcpy.sh'
 quotes-cli | cowthink -f tux | lolcat
 # fortune -s | cowthink -f tux | lolcat
 #fix display
-xrandr --output eDP-1 --set "scaling mode" "Full" 
+# xrandr --output eDP-1 --set "scaling mode" "Full" 
+
+# vim mode
+VI_MODE_SET_CURSOR=true
