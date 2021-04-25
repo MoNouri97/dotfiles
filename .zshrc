@@ -16,7 +16,7 @@ export PATH=$HOME/.dotnet/tools:$PATH
 
 export ANDROID_SDK=/mnt/D_partition/Download/Dev/android-sdk/sdk
 export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
-export BW_SESSION="b11AtupzoYAH0SSieDrOmaEAIaUjzznoyvT7Lza6dtFbvkaXhckAu3ou0Q4ZCMU4PKOlLKAUkySnL0RTI5WOcw=="
+
 # cd /mnt/D_partition/Download/Dev/React-Projects/a-star
 
 # Set name of the theme to load --- if set to "random", it will
@@ -31,9 +31,9 @@ export BW_SESSION="b11AtupzoYAH0SSieDrOmaEAIaUjzznoyvT7Lza6dtFbvkaXhckAu3ou0Q4ZC
 #  ZSH_THEME="jispwoso"
 #  ZSH_THEME="amuse"
 #  ZSH_THEME="agnoster"
-#  ZSH_THEME="powerlevel9k/powerlevel9k"
+ ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="myTheme"
-ZSH_THEME="my"
+# ZSH_THEME="my"
 
 
 # Set list of themes to pick from when loading at random
@@ -101,12 +101,12 @@ plugins=(
 	zsh-autosuggestions
 	history-substring-search
 	git-flow
-	vi-mode
+	# vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
+source ~/Dev/other/.conf.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -160,6 +160,8 @@ alias wifi='nmcli c up id "Gnet-309650"'
 alias vpnc='sudo protonvpn connect -f'
 alias vpnd='sudo protonvpn disconnect'
 alias androidDebug='/mnt/D_partition/Download/Dev/other/betterScrcpy.sh'
+alias overWifi='/mnt/D_partition/Download/Dev/other/overWifi.sh'
+alias todo='vim Dev/other/todo.md'
 
 #welcome msg
 quotes-cli | cowthink -f tux | lolcat
@@ -169,3 +171,4 @@ quotes-cli | cowthink -f tux | lolcat
 
 # vim mode
 VI_MODE_SET_CURSOR=true
+
