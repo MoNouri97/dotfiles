@@ -5,17 +5,22 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/mono/.oh-my-zsh"
 	# spark
-export SPARK_HOME=/opt/spark
-export PATH=$SPARK_HOME/bin:$PATH
-export PYSPARK_DRIVER_PYTHON=jupyter
-export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
+# export SPARK_HOME=/opt/spark
+# export PATH=$SPARK_HOME/bin:$PATH
+# export PYSPARK_DRIVER_PYTHON=jupyter
+# export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 # dotnet 
 export PATH=$HOME/.dotnet/tools:$PATH
+
+# ruby
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+export PATH=$HOME/.rbenv/plugins/ruby-build/bin:$PATH
 # java
 # export PATH="/home/mono/.jdks/openjdk-15.0.1/bin":$PATH
 
 export ANDROID_SDK=/mnt/D_partition/Download/Dev/android-sdk/sdk
-export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
+# export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
 
 # cd /mnt/D_partition/Download/Dev/React-Projects/a-star
 
@@ -24,14 +29,14 @@ export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #  ZSH_THEME="random"
-#  ZSH_THEME="robbyrussell"
+  ZSH_THEME="robbyrussell"
 # ZSH_THEME="kolo"
 # ZSH_THEME="awesomepanda"
 #  ZSH_THEME="pmcgee"
 #  ZSH_THEME="jispwoso"
 #  ZSH_THEME="amuse"
 #  ZSH_THEME="agnoster"
- ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="myTheme"
 # ZSH_THEME="my"
 
@@ -162,13 +167,15 @@ alias vpnd='sudo protonvpn disconnect'
 alias androidDebug='/mnt/D_partition/Download/Dev/other/betterScrcpy.sh'
 alias overWifi='/mnt/D_partition/Download/Dev/other/overWifi.sh'
 alias todo='vim Dev/other/todo.md'
+alias godot='"/mnt/D_partition/Download/Dev/GameDev/Godot/Godot.64" --path . --position 9999,9999'
 
 #welcome msg
-quotes-cli | cowthink -f tux | lolcat
+# quotes-cli | cowthink -f tux | lolcat
+# quotes-cli | cowthink -f tux | lolcat
 # fortune -s | cowthink -f tux | lolcat
+cat /home/mono/Dev/other/todo.md | lolcat
 #fix display
 # xrandr --output eDP-1 --set "scaling mode" "Full" 
 
 # vim mode
 VI_MODE_SET_CURSOR=true
-
