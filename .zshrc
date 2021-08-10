@@ -29,12 +29,12 @@ export ANDROID_SDK=/mnt/D_partition/Download/Dev/android-sdk/sdk
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #  ZSH_THEME="random"
-  ZSH_THEME="robbyrussell"
+  # ZSH_THEME="robbyrussell"
 # ZSH_THEME="kolo"
 # ZSH_THEME="awesomepanda"
 #  ZSH_THEME="pmcgee"
 #  ZSH_THEME="jispwoso"
-#  ZSH_THEME="amuse"
+ ZSH_THEME="amuse"
 #  ZSH_THEME="agnoster"
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="myTheme"
@@ -171,9 +171,9 @@ alias godot='"/mnt/D_partition/Download/Dev/GameDev/Godot/Godot.64" --path . --p
 
 #welcome msg
 # quotes-cli | cowthink -f tux | lolcat
-# quotes-cli | cowthink -f tux | lolcat
+#quotes-cli | cowthink -f tux | lolcat
 # fortune -s | cowthink -f tux | lolcat
-cat /home/mono/Dev/other/todo.md | lolcat
+# cat /home/mono/Dev/other/todo.md | lolcat
 #fix display
 # xrandr --output eDP-1 --set "scaling mode" "Full" 
 
