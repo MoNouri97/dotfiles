@@ -4,7 +4,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/mono/.oh-my-zsh"
-	# spark
+### spark
 # export SPARK_HOME=/opt/spark
 # export PATH=$SPARK_HOME/bin:$PATH
 # export PYSPARK_DRIVER_PYTHON=jupyter
@@ -12,21 +12,22 @@ export ZSH="/home/mono/.oh-my-zsh"
 # dotnet 
 # export PATH=$HOME/.dotnet/tools:$PATH
 
-# go
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/.go/bin
+### go
+# export PATH=$PATH:/usr/local/go/bin
+# export GOPATH=$HOME/.go/bin
 
-# ruby
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
-export PATH=$HOME/.rbenv/plugins/ruby-build/bin:$PATH
+### ruby
+# export PATH=$HOME/.rbenv/bin:$PATH
+# eval "$(rbenv init -)"
+# export PATH=$HOME/.rbenv/plugins/ruby-build/bin:$PATH
 
 # java
 # export PATH="/home/mono/.jdks/openjdk-15.0.1/bin":$PATH
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
-export ANDROID_SDK=/mnt/D_partition/Download/Dev/android-sdk/sdk
-# export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
+export ANDROID_SDK=/home/mono/Android/Sdk/
+export ANDROID_HOME=/home/mono/Android/Sdk/
+export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
 
 # cd /mnt/D_partition/Download/Dev/React-Projects/a-star
 
@@ -35,13 +36,13 @@ export ANDROID_SDK=/mnt/D_partition/Download/Dev/android-sdk/sdk
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #  ZSH_THEME="random"
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="kolo"
 # ZSH_THEME="awesomepanda"
 #  ZSH_THEME="pmcgee"
 #  ZSH_THEME="jispwoso"
 #  ZSH_THEME="amuse"
- ZSH_THEME="amusemod"
+#  ZSH_THEME="amusemod"
 #  ZSH_THEME="agnoster"
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="myTheme"
@@ -141,7 +142,7 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-
+ 
 # Example aliases
 alias zshconf="vim ~/.zshrc"
 alias config="code ~/.zshrc"
@@ -178,7 +179,7 @@ alias vpnd='protonvpn-cli disconnect'
 alias disk="gdu"
 alias top="htop"
 alias restart_plasma="kquitapp5 plasmashell && kstart5 plasmashell"
-alias dev="cd /media/mono/D/dev"
+alias dev="cd /mnt/D/Dev"
 #welcome msg
 # quotes-cli | cowthink -f tux | lolcat
 #quotes-cli | cowthink -f tux | lolcat
@@ -195,3 +196,8 @@ VI_MODE_SET_CURSOR=true
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 fm6000 -r -c random
+
+# pnpm
+# export PNPM_HOME="/home/mono/.local/share/pnpm"
+# export PATH="$PNPM_HOME:$PATH"
+# pnpm end
