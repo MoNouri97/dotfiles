@@ -201,3 +201,10 @@ fm6000 -r -c random
 # export PNPM_HOME="/home/mono/.local/share/pnpm"
 # export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+changeWorkTree(){
+  selected=`git worktree list | fzf | cut -d' ' -f1`
+  cd $selected
+}
+alias gw=changeWorkTree
+
