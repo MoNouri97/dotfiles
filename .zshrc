@@ -230,3 +230,10 @@ function nvims() {
   fi
   NVIM_APPNAME=$config nvim $@
 }
+
+changeWorkTree(){
+  selected=`git worktree list | fzf | cut -d' ' -f1`
+  cd $selected
+}
+alias gw=changeWorkTree
+
