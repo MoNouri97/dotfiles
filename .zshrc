@@ -1,6 +1,8 @@
 # active# If you come from bash you might have to change your $PATH.
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export LC_ALL="en_US.UTF-8"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/mono/.oh-my-zsh"
@@ -10,7 +12,8 @@ export ZSH="/home/mono/.oh-my-zsh"
 # export PYSPARK_DRIVER_PYTHON=jupyter
 # export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 # dotnet 
-# export PATH=$HOME/.dotnet/tools:$PATH
+# Add .NET Core SDK tools
+export PATH=$HOME/.dotnet/tools:$PATH
 
 ### go
 # export PATH=$PATH:/usr/local/go/bin
@@ -108,13 +111,13 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	# vi-mode
+	vi-mode
 	colored-man-pages
 	nvm
 	command-not-found
 	zsh-syntax-highlighting
 	history-substring-search
-	git-flow
+	git
 	zsh-autosuggestions
 )
 
@@ -129,9 +132,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -144,9 +147,14 @@ fi
 
  
 # Example aliases
-alias zshconf="vim ~/.zshrc"
-alias config="code ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
+# alias code="codium"
+alias v="nvim"
+alias vim=nvim
+alias nvimconf="cd .config/nvim && nvim . && cd"
+alias vsconfig="code ~/.zshrc"
+alias config="v ~/.zshrc"
+alias zshconf="v ~/.zshrc"
+alias ohmyzsh="v ~/.oh-my-zsh"
 # for dotfiles
 alias dotconf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 # run this : dotconf config --local status.showUntrackedFiles no 
@@ -156,7 +164,7 @@ alias androidStudio="cd /mnt/D_partition/Download/Dev/android-studio-ide-193\ 66
 # alias emulator=$ANDROID_SDK/tools/emulator
 # emulator  @Pixel_2_API_29 
 alias vsc="code ."
-mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
+# mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 # dev() {
 # 	echo "$1 $2 $3"
 # 	if [ $1 ] && [ $1 = "now" ];then
@@ -171,15 +179,20 @@ mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 	# with an arg ex: dev react or dev now to launch script 
 # alias wifi='nmcli c up id "Gnet-309650"'
 alias vpnc='protonvpn-cli connect -f'
+alias c='protonvpn-cli connect -f'
 alias vpnd='protonvpn-cli disconnect'
+alias d='protonvpn-cli disconnect'
 # alias androidDebug='/mnt/D_partition/Download/Dev/other/betterScrcpy.sh'
 # alias overWifi='/mnt/D_partition/Download/Dev/other/overWifi.sh'
 # alias todo='vim Dev/other/todo.md'
 # alias godot='"/mnt/D_partition/Download/Dev/GameDev/Godot/Godot.64" --path . --position 9999,9999'
+GODOT="/mnt/D/Dev/GameDev/Godot_v4.1.1-stable_mono_linux_x86_64/Godot_v4.1.1-stable_mono_linux.x86_64"
 alias disk="gdu"
 alias top="htop"
 alias restart_plasma="kquitapp5 plasmashell && kstart5 plasmashell"
 alias dev="cd /mnt/D/Dev"
+alias blur="cd /mnt/D/Dev/GameDev/BlurSecond && nvim . --listen ./godothost"
+
 #welcome msg
 # quotes-cli | cowthink -f tux | lolcat
 #quotes-cli | cowthink -f tux | lolcat
@@ -201,3 +214,19 @@ fm6000 -r -c random
 # export PNPM_HOME="/home/mono/.local/share/pnpm"
 # export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+alias nvim-chad="NVIM_APPNAME=NvChad nvim"
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+
+function nvims() {
+  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
