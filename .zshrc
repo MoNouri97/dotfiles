@@ -119,6 +119,7 @@ plugins=(
 	history-substring-search
 	git
 	zsh-autosuggestions
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -150,7 +151,7 @@ fi
 # alias code="codium"
 alias v="nvim"
 alias vim=nvim
-alias nvimconf="cd .config/nvim && nvim . && cd"
+alias nvimconf="cd $HOME/.config/nvim && nvim  && cd"
 alias vsconfig="code ~/.zshrc"
 alias config="v ~/.zshrc"
 alias zshconf="v ~/.zshrc"
