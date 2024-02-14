@@ -168,7 +168,6 @@ alias androidStudio="cd /mnt/D_partition/Download/Dev/android-studio-ide-193\ 66
 # alias emulator=$ANDROID_SDK/tools/emulator
 # emulator  @Pixel_2_API_29 
 alias vsc="code ."
-# mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 # dev() {
 # 	echo "$1 $2 $3"
 # 	if [ $1 ] && [ $1 = "now" ];then
@@ -240,4 +239,5 @@ changeWorkTree(){
   cd $selected
 }
 alias gw=changeWorkTree
+mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 

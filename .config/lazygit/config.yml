@@ -1,0 +1,19 @@
+gui:
+  splitDiff: "auto" # one of 'auto' | 'always'
+  showBottomLine: false
+  # nerdFontsVersion: "3"
+promptToReturnFromSubprocess: false
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+os:
+  editCommand: "nvim"
+  # --remote-send "<cmd>lua require('core.scripts.lazygit-open-file')('{{filename}}', '{{line}}')<CR>"
+  # editCommandTemplate: '{{editor}} --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
+  # editCommandTemplate: nvim --server /tmp/nvim-server.pipe --remote-send "<cmd>lua require('scripts.lazygit')('{{filename}}', '{{line}}')<CR>"
+
+customCommands:
+  - key: "<c-r>"
+    context: "global"
+    command: "git pull --tags"
