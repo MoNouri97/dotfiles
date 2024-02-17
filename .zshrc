@@ -111,7 +111,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	vi-mode
+	# vi-mode
 	colored-man-pages
 	nvm
 	command-not-found
@@ -211,7 +211,6 @@ VI_MODE_SET_CURSOR=true
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-fm6000 -r -c random
 
 # pnpm
 # export PNPM_HOME="/home/mono/.local/share/pnpm"
@@ -241,3 +240,13 @@ changeWorkTree(){
 alias gw=changeWorkTree
 mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 
+
+# batter cat
+alias cat=bat
+# z better cd
+eval "$(zoxide init zsh)"
+alias cd=z
+
+
+
+fm6000 -r -c random
