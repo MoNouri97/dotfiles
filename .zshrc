@@ -160,8 +160,11 @@ alias config="v ~/.zshrc"
 alias zshconf="v ~/.zshrc"
 alias ohmyzsh="v ~/.oh-my-zsh"
 # for dotfiles
-alias dotconf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotconf="cd $HOME/dotfiles && nvim . && cd -";
+# # OLD WAY
+# alias dotconf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 # run this : dotconf config --local status.showUntrackedFiles no 
+#
 
 alias xampp="sudo /opt/lampp/xampp"
 alias androidStudio="cd /mnt/D_partition/Download/Dev/android-studio-ide-193\ 6626763-linux/android-studio/bin && ./studio.sh"
@@ -189,7 +192,6 @@ alias d='protonvpn-cli disconnect'
 # alias overWifi='/mnt/D_partition/Download/Dev/other/overWifi.sh'
 # alias todo='vim Dev/other/todo.md'
 # alias godot='"/mnt/D_partition/Download/Dev/GameDev/Godot/Godot.64" --path . --position 9999,9999'
-GODOT="/mnt/D/Dev/GameDev/Godot_v4.1.1-stable_mono_linux_x86_64/Godot_v4.1.1-stable_mono_linux.x86_64"
 alias disk="gdu"
 alias top="htop"
 alias restart_plasma="kquitapp5 plasmashell && kstart5 plasmashell"
@@ -247,6 +249,11 @@ alias cat=bat
 eval "$(zoxide init zsh)"
 alias cd=z
 
+# Godot
+GODOT="/home/mono/.local/share/godot/app_userdata/Godots/versions/Godot_v4_3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux.x86_64"
+alias godot=$GODOT
+alias godotrun="dotnet build && godot"
+# export PATH="$GODOT:$PATH"
 
 
 fm6000 -r -c random
