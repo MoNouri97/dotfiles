@@ -5,7 +5,7 @@ export PATH=$HOME/.local/bin:$PATH
 export LC_ALL="en_US.UTF-8"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/mono/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ### spark
 # export SPARK_HOME=/opt/spark
 # export PATH=$SPARK_HOME/bin:$PATH
@@ -28,9 +28,16 @@ export PATH=$HOME/.dotnet/tools:$PATH
 # export PATH="/home/mono/.jdks/openjdk-15.0.1/bin":$PATH
 export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
-export ANDROID_SDK=/home/mono/Android/Sdk/
-export ANDROID_HOME=/home/mono/Android/Sdk/
-export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
+# Java Mac
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
+export ANDROID_HOME=$HOME/Library/Android/sdk/
+# export ANDROID_HOME=$HOME/Android/Sdk/
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# export ANDROID_SDK=/home/mono/Android/Sdk/
+# export ANDROID_HOME=/home/mono/Android/Sdk/
+# export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
 
 # cd /mnt/D_partition/Download/Dev/React-Projects/a-star
 
@@ -115,7 +122,7 @@ plugins=(
 	colored-man-pages
 	nvm
 	command-not-found
-	zsh-syntax-highlighting
+	# zsh-syntax-highlighting
 	history-substring-search
 	git
 	zsh-autosuggestions
@@ -255,5 +262,7 @@ alias godot=$GODOT
 alias godotrun="dotnet build && godot"
 # export PATH="$GODOT:$PATH"
 
+# mac iterm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 fm6000 -r -c random
