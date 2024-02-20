@@ -32,8 +32,10 @@ export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
 export ANDROID_HOME=$HOME/Library/Android/sdk/
 # export ANDROID_HOME=$HOME/Android/Sdk/
+# MAC
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH=/opt/homebrew/bin/:/usr/local/bin/:$PATH
 
 # export ANDROID_SDK=/home/mono/Android/Sdk/
 # export ANDROID_HOME=/home/mono/Android/Sdk/
@@ -139,7 +141,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # this is to allow lazygit to send tabs remotely to nvim
-alias nvim='nvim --listen /tmp/nvim-server.pipe'
+# alias nvim='nvim --listen /tmp/nvim-server.pipe'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -162,10 +164,10 @@ fi
 alias v="nvim"
 alias vim=nvim
 alias nvimconf="cd $HOME/.config/nvim && nvim  && cd"
-alias vsconfig="code ~/.zshrc"
-alias config="v ~/.zshrc"
-alias zshconf="v ~/.zshrc"
-alias ohmyzsh="v ~/.oh-my-zsh"
+alias vsconfig="code $HOME/zshrc"
+alias config="v $HOME/zshrc"
+alias zshconf="v $HOME/zshrc"
+alias ohmyzsh="v $HOME/oh-my-zsh"
 # for dotfiles
 alias dotconf="cd $HOME/dotfiles && nvim . && cd -";
 # # OLD WAY

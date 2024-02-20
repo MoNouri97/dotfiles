@@ -2,7 +2,7 @@ gui:
   splitDiff: "auto" # one of 'auto' | 'always'
   showBottomLine: false
   # nerdFontsVersion: "3"
-promptToReturnFromSubprocess: false
+promptToReturnFromSubprocess: true
 git:
   paging:
     colorArg: always
