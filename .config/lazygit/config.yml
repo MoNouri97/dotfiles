@@ -1,9 +1,15 @@
 gui:
   splitDiff: "auto" # one of 'auto' | 'always'
   showBottomLine: false
+  expandFocusedSidePanel: true
   # nerdFontsVersion: "3"
+  # showFileIcons: false
+  border: "rounded"
 promptToReturnFromSubprocess: true
 git:
+  log:
+    showGraph: always
+    showWholeGraph: true
   paging:
     colorArg: always
     pager: delta --dark --paging=never
