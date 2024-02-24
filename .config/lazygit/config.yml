@@ -14,7 +14,7 @@ git:
     colorArg: always
     pager: delta --dark --paging=never
 os:
-  editCommand: "nvim"
+  edit: "nvim {{filename}}"
   # --remote-send "<cmd>lua require('core.scripts.lazygit-open-file')('{{filename}}', '{{line}}')<CR>"
   # editCommandTemplate: '{{editor}} --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
   # editCommandTemplate: nvim --server /tmp/nvim-server.pipe --remote-send "<cmd>lua require('scripts.lazygit')('{{filename}}', '{{line}}')<CR>"
