@@ -54,30 +54,31 @@ foreground = "0xD9E0EE"
 TERM = "xterm-256color"
 
 [font]
-size = 12
+size = 16
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
-style = "Bold"
+style = "Regular"
 
 [font.glyph_offset]
-x = 1
+x = 0
 y = 0
 
 [font.italic]
 family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"
-style = "Regular"
+style = "ExtraLight"
 
 [font.offset]
-x = 0
-y = 0
+x = 1
+y = 2
 
 [mouse]
 # faux_scrolling_lines = 1
-hide_when_typing = true
+hide_when_typing = false
 
 [[mouse.bindings]]
 action = "PasteSelection"
@@ -96,12 +97,12 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 program = "/bin/zsh"
 
 [window]
-decorations = "full"
+decorations = "none"
 dynamic_title = true
-dynamic_padding = true
+dynamic_padding = false
 # option_as_alt = "Both"
 startup_mode = "Maximized"
-opacity = 0.9
+opacity = 0.8
 blur = true
 
 [window.dimensions]
@@ -109,5 +110,5 @@ columns = 160
 lines = 80
 
 [window.padding]
-x = 4
-y = 0
+x = 5
+y = 5
