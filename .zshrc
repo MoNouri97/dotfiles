@@ -244,12 +244,19 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
+# utils
 changeWorkTree(){
   selected=`git worktree list | fzf | cut -d' ' -f1`
   cd $selected
 }
 alias gw=changeWorkTree
 mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
+
+connectDevice(){
+  selected=`adb devices | awk '/device$/ {print $1}' | fzf`
+  adb -s $selected reverse tcp:8081 tcp:8081
+  echo "connected!"
+}
 
 
 # batter cat
