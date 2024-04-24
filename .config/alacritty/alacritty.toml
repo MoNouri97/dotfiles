@@ -74,7 +74,7 @@ style = "ExtraLight"
 
 [font.offset]
 x = 1
-y = 2
+y = 3
 
 [mouse]
 # faux_scrolling_lines = 1
@@ -99,7 +99,7 @@ program = "/bin/zsh"
 [window]
 decorations = "none"
 dynamic_title = true
-dynamic_padding = false
+dynamic_padding = true
 # option_as_alt = "Both"
 startup_mode = "Maximized"
 opacity = 0.8
@@ -111,4 +111,4 @@ lines = 80
 
 [window.padding]
 x = 5
-y = 5
+y = 0
