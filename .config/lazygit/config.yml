@@ -20,9 +20,9 @@ os:
   # editCommandTemplate: nvim --server /tmp/nvim-server.pipe --remote-send "<cmd>lua require('scripts.lazygit')('{{filename}}', '{{line}}')<CR>"
 
 customCommands:
-  - key: "p"
-    context: "global"
+  - key: "a"
+    context: "localBranches"
     command: "git pull; git pull --tags"
-  - key: "P"
-    context: "global"
+  - key: "A"
+    context: "localBranches"
     command: "git push; git push --tags"

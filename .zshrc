@@ -26,10 +26,12 @@ export PATH=$HOME/.dotnet/tools:$PATH
 
 # java
 # export PATH="/home/mono/.jdks/openjdk-15.0.1/bin":$PATH
-export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
+# export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
 # Java Mac
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+export PATH="$JAVA_HOME:$PATH"
+
 export ANDROID_HOME=$HOME/Library/Android/sdk/
 # export ANDROID_HOME=$HOME/Android/Sdk/
 # MAC
@@ -244,12 +246,19 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
+# utils
 changeWorkTree(){
   selected=`git worktree list | fzf | cut -d' ' -f1`
   cd $selected
 }
 alias gw=changeWorkTree
 mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
+
+connectDevice(){
+  selected=`adb devices | awk '/device$/ {print $1}' | fzf`
+  adb -s $selected reverse tcp:8081 tcp:8081
+  echo "connected!"
+}
 
 
 # batter cat
