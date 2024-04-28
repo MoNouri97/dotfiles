@@ -54,11 +54,11 @@ foreground = "0xD9E0EE"
 TERM = "xterm-256color"
 
 [font]
-size = 16
+size = 12
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
-style = "Regular"
+style = "Black"
 
 [font.glyph_offset]
 x = 0
@@ -70,11 +70,11 @@ style = "Italic"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"
-style = "ExtraLight"
+style = "Medium"
 
 [font.offset]
-x = 1
-y = 2
+x = 0
+y = 1
 
 [mouse]
 # faux_scrolling_lines = 1
@@ -95,6 +95,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [shell]
 program = "/bin/zsh"
+# args = ["-l","-c","tmux"]
 
 [window]
 decorations = "none"
@@ -102,7 +103,7 @@ dynamic_title = true
 dynamic_padding = false
 # option_as_alt = "Both"
 startup_mode = "Maximized"
-opacity = 0.8
+opacity = 0.9
 blur = true
 
 [window.dimensions]
@@ -111,4 +112,4 @@ lines = 80
 
 [window.padding]
 x = 5
-y = 5
+y = 0

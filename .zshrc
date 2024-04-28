@@ -205,7 +205,7 @@ alias disk="gdu"
 alias top="htop"
 alias restart_plasma="kquitapp5 plasmashell && kstart5 plasmashell"
 alias dev="cd /mnt/D/Dev"
-alias blur="cd /mnt/D/Dev/GameDev/BlurSecond && nvim . --listen ./godothost"
+alias blur="cd /mnt/D/Dev/GameDev/BlurSecond && nvim --listen ./godothost"
 
 #welcome msg
 # quotes-cli | cowthink -f tux | lolcat
