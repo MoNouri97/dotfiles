@@ -29,7 +29,7 @@ export PATH=$HOME/.dotnet/tools:$PATH
 # export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
 # Java Mac
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/bin"
 export PATH="$JAVA_HOME:$PATH"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk/
@@ -251,7 +251,10 @@ changeWorkTree(){
   selected=`git worktree list | fzf | cut -d' ' -f1`
   cd $selected
 }
+# [G]it [W]orktree
 alias gw=changeWorkTree
+# [G]it [W]orktree & [S]tart
+alias gws="gw && yarn && yarn start"
 mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 
 connectDevice(){
