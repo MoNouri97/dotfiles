@@ -2,7 +2,7 @@ gui:
   splitDiff: "auto" # one of 'auto' | 'always'
   showBottomLine: false
   expandFocusedSidePanel: true
-  # nerdFontsVersion: "3"
+  nerdFontsVersion: "3"
   # showFileIcons: false
   border: "rounded"
 promptToReturnFromSubprocess: true
