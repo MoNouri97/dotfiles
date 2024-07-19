@@ -39,6 +39,8 @@ export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-to
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=/opt/homebrew/bin/:/usr/local/bin/:$PATH
 
+#php symfony
+export PATH="$HOME/.symfony5/bin:$PATH"
 # export ANDROID_SDK=/home/mono/Android/Sdk/
 # export ANDROID_HOME=/home/mono/Android/Sdk/
 # export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
@@ -206,8 +208,6 @@ alias d='protonvpn-cli disconnect'
 alias disk="gdu"
 alias top="htop"
 alias restart_plasma="kquitapp5 plasmashell && kstart5 plasmashell"
-alias dev="cd /mnt/D/Dev"
-alias blur="cd /mnt/D/Dev/GameDev/BlurSecond && nvim --listen ./godothost"
 
 #welcome msg
 # quotes-cli | cowthink -f tux | lolcat
@@ -269,6 +269,11 @@ alias cat=bat
 # z better cd
 eval "$(zoxide init zsh)"
 alias cd=z
+
+# dev
+alias dev="cd /mnt/D/Dev"
+alias blur="cd /mnt/D/Dev/GameDev/BlurSecond && nvim --listen ./godothost"
+game(){cd $1 && nvim . --listen ./godothost}
 
 # Godot
 GODOT="/home/mono/.local/share/godot/app_userdata/Godots/versions/Godot_v4_3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux.x86_64"
