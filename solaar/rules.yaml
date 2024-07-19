@@ -1,0 +1,39 @@
+%YAML 1.3
+---
+- Rule:
+  - Test: thumb_wheel_down
+  - KeyPress:
+    - XF86_AudioLowerVolume
+    - click
+- Test: thumb_wheel_up
+- KeyPress:
+  - XF86_AudioRaiseVolume
+  - click
+...
+---
+- Rule:
+  - Key: [Mouse Gesture Button, pressed]
+  - KeyPress:
+    - [Super_L, g]
+    - click
+- Rule:
+  - MouseGesture: Mouse Up
+  - KeyPress:
+    - [Super_L, Control_L, Up]
+    - click
+- Rule:
+  - MouseGesture: Mouse Right
+  - KeyPress:
+    - [Super_L, Control_L, Right]
+    - click
+- Rule:
+  - MouseGesture: Mouse Left
+  - KeyPress:
+    - [Super_L, Control_L, Left]
+    - click
+- Rule:
+  - MouseGesture: Mouse Down
+  - KeyPress:
+    - [Super_L, Control_L, Down]
+    - click
+...
