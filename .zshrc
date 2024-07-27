@@ -123,7 +123,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
+plugins=( 
+  git 
+  sudo 
+  zsh-256color
 	# vi-mode
 	colored-man-pages
 	nvm
@@ -283,5 +286,7 @@ alias godotrun="dotnet build && godot"
 
 # mac iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#notes
+alias notes="nvim $HOME/my-scripts/notes.md"
 
 fm6000 -r -c random
