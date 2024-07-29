@@ -22,4 +22,4 @@
   scroll-ratchet: 2
   smart-shift: 10
   thumb-scroll-invert: false
-  thumb-scroll-mode: true
+  thumb-scroll-mode: false
