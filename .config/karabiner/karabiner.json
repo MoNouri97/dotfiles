@@ -1357,44 +1357,6 @@
             ]
           },
           {
-            "description": "Ctrl+B => Cmd+B (Bold)",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "^org\\.macports\\.X11$",
-                      "^com\\.apple\\.Terminal$",
-                      "^com\\.googlecode\\.iterm2$",
-                      "^co\\.zeit\\.hyper$",
-                      "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
-                      "^com\\.microsoft\\.rdc\\.macos$",
-                      "^tv\\.parsec\\.www$",
-                      "^io\\.alacritty$",
-                      "^com\\.github\\.wez\\.wezterm$",
-                      "^org\\.alacritty$"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "b",
-                  "modifiers": {
-                    "mandatory": ["control"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "b",
-                    "modifiers": ["command"]
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
             "description": "Ctrl+I => Cmd+I (Italic)",
             "manipulators": [
               {
@@ -2389,7 +2351,18 @@
         "delay_milliseconds_before_open_device": 1000
       },
       "selected": true,
-      "simple_modifications": [],
+      "simple_modifications": [
+        {
+          "from": {
+            "key_code": "caps_lock"
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            }
+          ]
+        }
+      ],
       "virtual_hid_keyboard": {
         "country_code": 0,
         "indicate_sticky_modifier_keys_state": true,
@@ -2398,3 +2371,4 @@
     }
   ]
 }
+
