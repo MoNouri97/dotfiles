@@ -67,7 +67,7 @@
       "default": "",
     },
     "persistent-workspaces": {
-      "*": 5,
+      "*": 3,
     },
   },
   // sourced from modules based on config.ctl //
