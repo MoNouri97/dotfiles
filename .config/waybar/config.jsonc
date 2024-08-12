@@ -166,9 +166,9 @@
   },
 
   "clock": {
-    "format": "{:%I:%M %p}",
+    "format-alt": "{:%I:%M %p}",
     "rotate": 0,
-    "format-alt": "{:%R 󰃭 %d·%m·%y}",
+    "format": "{:%R 󰃭 %d·%m·%y}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",
