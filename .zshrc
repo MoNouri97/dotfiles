@@ -275,7 +275,7 @@ alias cd=z
 
 # dev
 alias dev="cd /mnt/D/Dev"
-alias blur="cd /mnt/D/Dev/GameDev/BlurSecond && nvim --listen ./godothost"
+# alias blur="cd /mnt/D/Dev/GameDev/BlurSecond && nvim --listen ./godothost"
 game(){cd $1 && nvim . --listen ./godothost}
 
 # Godot
