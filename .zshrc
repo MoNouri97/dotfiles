@@ -11,9 +11,20 @@ export ZSH="$HOME/.oh-my-zsh"
 # export PATH=$SPARK_HOME/bin:$PATH
 # export PYSPARK_DRIVER_PYTHON=jupyter
 # export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
-# dotnet 
+
+### dotnet 
 # Add .NET Core SDK tools
-export PATH=$HOME/.dotnet/tools:$PATH
+# .NET SDK Configuration
+export DOTNET_ROOT="/usr/share/dotnet"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1 # Disable analytics
+export DOTNET_ROLL_FORWARD_TO_PRERELEASE=1
+# Add the .NET SDK to the system paths so we can use the `dotnet` tool.
+export PATH="$DOTNET_ROOT:$PATH"
+export PATH="$DOTNET_ROOT/sdk:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
+# Run this if you ever run into errors while doing a `dotnet restore`
+alias nugetclean="dotnet nuget locals --clear all"
+
 
 ### go
 # export PATH=$PATH:/usr/local/go/bin
@@ -172,8 +183,8 @@ alias v="nvim"
 alias vim=nvim
 alias nvimconf="cd $HOME/.config/nvim && nvim  && cd"
 alias vsconfig="code $HOME/zshrc"
-alias config="v $HOME/zshrc"
-alias zshconf="v $HOME/zshrc"
+alias config="v $HOME/.zshrc"
+alias zshconf="v $HOME/.zshrc"
 alias ohmyzsh="v $HOME/oh-my-zsh"
 # for dotfiles
 alias dotconf="cd $HOME/dotfiles && nvim . && cd -";
