@@ -136,15 +136,14 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=( 
   git 
+  nvm
   sudo 
   zsh-256color
 	# vi-mode
 	colored-man-pages
-	nvm
 	command-not-found
 	# zsh-syntax-highlighting
 	history-substring-search
-	git
 	zsh-autosuggestions
   fzf
 )
@@ -300,4 +299,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 #notes
 alias notes="nvim $HOME/my-scripts/notes.md"
 
+nvm use --lts
 fm6000 -r -c random
