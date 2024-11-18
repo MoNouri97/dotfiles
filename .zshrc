@@ -27,8 +27,9 @@ alias nugetclean="dotnet nuget locals --clear all"
 
 
 ### go
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
 # export PATH=$PATH:/usr/local/go/bin
-# export GOPATH=$HOME/.go/bin
 
 ### ruby
 # export PATH=$HOME/.rbenv/bin:$PATH
@@ -40,7 +41,7 @@ alias nugetclean="dotnet nuget locals --clear all"
 # export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
 # Java Mac
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17/bin"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 export PATH="$JAVA_HOME:$PATH"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk/
