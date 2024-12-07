@@ -220,7 +220,7 @@ alias d='protonvpn-cli disconnect'
 # alias todo='vim Dev/other/todo.md'
 # alias godot='"/mnt/D_partition/Download/Dev/GameDev/Godot/Godot.64" --path . --position 9999,9999'
 alias disk="gdu"
-alias top="htop"
+alias top="btop"
 alias restart_plasma="kquitapp5 plasmashell && kstart5 plasmashell"
 
 #welcome msg
