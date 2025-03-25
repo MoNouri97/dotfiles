@@ -181,7 +181,7 @@ fi
 # alias code="codium"
 alias v="nvim"
 alias vim=nvim
-alias nvimconf="cd $HOME/.config/nvim && nvim  && cd"
+alias nvimconf="cd $HOME/dotfiles/.config/nvim && nvim  && cd"
 alias vsconfig="code $HOME/zshrc"
 alias config="v $HOME/.zshrc"
 alias zshconf="v $HOME/.zshrc"
