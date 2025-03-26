@@ -2,7 +2,7 @@
 
 # Function to list directories
 list_dirs() {
-  find /mnt/D/Dev/GameDev ~/dotfiles ~/dotfiles/.config -maxdepth 2 -type d \
+  find /mnt/D/Dev/GameDev ~/dotfiles ~/dotfiles/.config /mnt/D/Dev/obsidian -maxdepth 2 -type d \
     -maxdepth 2 \
     -printf "%A@ %p\n" 2>/dev/null |
     sort -rn |
