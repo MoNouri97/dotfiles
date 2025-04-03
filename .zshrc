@@ -11,25 +11,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # export PATH=$SPARK_HOME/bin:$PATH
 # export PYSPARK_DRIVER_PYTHON=jupyter
 # export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
-
-### dotnet 
+# dotnet 
 # Add .NET Core SDK tools
-# .NET SDK Configuration
-export DOTNET_ROOT="/usr/share/dotnet"
-export DOTNET_CLI_TELEMETRY_OPTOUT=1 # Disable analytics
-export DOTNET_ROLL_FORWARD_TO_PRERELEASE=1
-# Add the .NET SDK to the system paths so we can use the `dotnet` tool.
-export PATH="$DOTNET_ROOT:$PATH"
-export PATH="$DOTNET_ROOT/sdk:$PATH"
-export PATH="$HOME/.dotnet/tools:$PATH"
-# Run this if you ever run into errors while doing a `dotnet restore`
-alias nugetclean="dotnet nuget locals --clear all"
-
+export PATH=$HOME/.dotnet/tools:$PATH
 
 ### go
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
 # export PATH=$PATH:/usr/local/go/bin
+# export GOPATH=$HOME/.go/bin
 
 ### ruby
 # export PATH=$HOME/.rbenv/bin:$PATH
@@ -41,7 +29,7 @@ export PATH=$PATH:$GOPATH/bin
 # export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
 # Java Mac
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/bin"
 export PATH="$JAVA_HOME:$PATH"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk/
@@ -51,8 +39,6 @@ export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-to
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=/opt/homebrew/bin/:/usr/local/bin/:$PATH
 
-#php symfony
-export PATH="$HOME/.symfony5/bin:$PATH"
 # export ANDROID_SDK=/home/mono/Android/Sdk/
 # export ANDROID_HOME=/home/mono/Android/Sdk/
 # export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
@@ -104,6 +90,20 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -215,20 +215,6 @@ alias vpnc='protonvpn-cli connect -f'
 alias c='protonvpn-cli connect -f'
 alias vpnd='protonvpn-cli disconnect'
 alias d='protonvpn-cli disconnect'
-# alias androidDebug='/mnt/D_partition/Download/Dev/other/betterScrcpy.sh'
-# alias overWifi='/mnt/D_partition/Download/Dev/other/overWifi.sh'
-# alias todo='vim Dev/other/todo.md'
-# alias godot='"/mnt/D_partition/Download/Dev/GameDev/Godot/Godot.64" --path . --position 9999,9999'
-alias disk="gdu"
-alias top="btop"
-alias restart_plasma="kquitapp5 plasmashell && kstart5 plasmashell"
-
-#welcome msg
-# quotes-cli | cowthink -f tux | lolcat
-#quotes-cli | cowthink -f tux | lolcat
-# fortune -s | cowthink -f tux 
-# cat /home/mono/Dev/other/todo.md | lolcat
-#fix display
 # xrandr --output eDP-1 --set "scaling mode" "Full" 
 
 # vim mode
@@ -265,10 +251,7 @@ changeWorkTree(){
   selected=`git worktree list | fzf | cut -d' ' -f1`
   cd $selected
 }
-# [G]it [W]orktree
 alias gw=changeWorkTree
-# [G]it [W]orktree & [S]tart
-alias gws="gw && yarn && yarn start"
 mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 
 connectDevice(){
@@ -284,11 +267,6 @@ alias cat=bat
 eval "$(zoxide init zsh)"
 alias cd=z
 
-# dev
-alias dev="cd /mnt/D/Dev"
-# alias blur="cd /mnt/D/Dev/GameDev/BlurSecond && nvim --listen ./godothost"
-game(){cd $1 && nvim . --listen ./godothost}
-
 # Godot
 GODOT="/home/mono/.local/share/godot/app_userdata/Godots/versions/Godot_v4_3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux.x86_64"
 alias godot=$GODOT
@@ -297,8 +275,5 @@ alias godotrun="dotnet build && godot"
 
 # mac iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-#notes
-alias notes="nvim $HOME/my-scripts/notes.md"
 
-nvm use --lts
 fm6000 -r -c random
