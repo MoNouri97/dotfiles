@@ -259,6 +259,9 @@ connectDevice(){
   adb -s $selected reverse tcp:8081 tcp:8081
   echo "connected!"
 }
+game(){
+  z $1 && nvim . --listen ./godothost
+}
 
 
 # batter cat
