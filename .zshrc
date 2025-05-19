@@ -29,10 +29,10 @@ export PATH=$HOME/.dotnet/tools:$PATH
 # export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
 # Java Mac
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17/bin"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 export PATH="$JAVA_HOME:$PATH"
 
-export ANDROID_HOME=$HOME/Library/Android/sdk/
+export ANDROID_HOME=$HOME/Library/Android/sdk
 # export ANDROID_HOME=$HOME/Android/Sdk/
 # MAC
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
