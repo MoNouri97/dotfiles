@@ -66,9 +66,9 @@
       "active": "",
       "default": "",
     },
-    "persistent-workspaces": {
-      "*": 3,
-    },
+    // "persistent-workspaces": {
+    //   "*": 3,
+    // },
   },
   // sourced from modules based on config.ctl //
 
