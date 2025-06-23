@@ -17,7 +17,6 @@
   "modules-left": [
     "custom/padd",
     "custom/l_end",
-    "custom/power",
     "custom/cliphist",
     // "custom/wbar",
     // "custom/theme",
@@ -51,6 +50,7 @@
     "pulseaudio",
     "pulseaudio#microphone",
     "custom/keybindhint",
+    "custom/power",
     "custom/r_end",
     "custom/padd",
   ],
