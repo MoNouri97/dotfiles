@@ -3,7 +3,7 @@ configuration {
   display-window: "Windows:";
   drun-display-format: "{name}";
   font: "JetBrainsMono Nerd Font Medium 10";
-  modi: "window,run,drun,emoji,calc";
+  modi: "window,drun,calc,emoji";
   show-icons: true;
 }
 
@@ -22,6 +22,8 @@ configuration {
   margin: 0;
   padding: 0;
   spacing: 0;
+  background-color: transparent;
+  text-color: @fg-alt;
 }
 
 window {
@@ -63,6 +65,13 @@ inputbar {
   background-color: @bg;
 }
 
+message {
+    border:             2px 0 0;
+    border-color:       @bg;
+    background-color:   @bg;
+    text-color: @fg-alt;
+}
+
 listview {
   background-color: @bg;
   columns: 1;
@@ -70,7 +79,7 @@ listview {
 }
 
 mainbox {
-  children: [inputbar, listview];
+  children: [inputbar, message, listview];
   background-color: @bg;
 }
 
