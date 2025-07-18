@@ -1,0 +1,229 @@
+[gd_resource type="EditorSettings" load_steps=13 format=3]
+
+[sub_resource type="InputEventKey" id="InputEventKey_baupq"]
+device = -1
+physical_keycode = 71
+unicode = 103
+
+[sub_resource type="InputEventKey" id="InputEventKey_protj"]
+device = -1
+physical_keycode = 82
+unicode = 114
+
+[sub_resource type="InputEventKey" id="InputEventKey_j0v75"]
+device = -1
+physical_keycode = 83
+unicode = 115
+
+[sub_resource type="InputEventKey" id="InputEventKey_bunet"]
+device = -1
+shift_pressed = true
+ctrl_pressed = true
+physical_keycode = 69
+
+[sub_resource type="InputEventKey" id="InputEventKey_51kla"]
+device = -1
+shift_pressed = true
+ctrl_pressed = true
+physical_keycode = 71
+
+[sub_resource type="InputEventKey" id="InputEventKey_cfllg"]
+command_or_control_autoremap = true
+alt_pressed = true
+keycode = 75
+unicode = 75
+
+[sub_resource type="InputEventKey" id="InputEventKey_adpck"]
+device = -1
+shift_pressed = true
+ctrl_pressed = true
+physical_keycode = 67
+
+[sub_resource type="InputEventKey" id="InputEventKey_jiyx6"]
+keycode = 4194326
+
+[sub_resource type="InputEventKey" id="InputEventKey_ds2mr"]
+shift_pressed = true
+ctrl_pressed = true
+keycode = 4194342
+
+[sub_resource type="InputEventKey" id="InputEventKey_na1i2"]
+device = -1
+shift_pressed = true
+ctrl_pressed = true
+physical_keycode = 68
+
+[sub_resource type="InputEventKey" id="InputEventKey_ma22t"]
+shift_pressed = true
+keycode = 4194343
+
+[sub_resource type="InputEventKey" id="InputEventKey_60ugw"]
+device = -1
+shift_pressed = true
+ctrl_pressed = true
+physical_keycode = 4194320
+
+[resource]
+interface/editor/dock_tab_style = 1
+interface/editor/editor_screen = -4
+interface/editor/project_manager_screen = -4
+interface/editor/code_font_contextual_ligatures = 0
+interface/editor/main_font = "/mnt/D/Dev/GameDev/programs_tools/fonts/Inter-4.1/InterVariable.ttf"
+interface/editor/save_on_focus_loss = true
+interface/editor/vsync_mode = 0
+interface/inspector/nested_color_mode = 2
+interface/inspector/default_color_picker_shape = 0
+interface/theme/preset = "Custom"
+interface/theme/spacing_preset = "Custom"
+interface/theme/base_color = Color(0.0745239, 0.0795969, 0.0859375, 1)
+interface/theme/accent_color = Color(0.0117188, 1, 0.83786, 1)
+interface/theme/contrast = 0.3
+interface/theme/icon_saturation = 2.0
+interface/theme/corner_radius = 5
+interface/theme/base_spacing = 3
+interface/theme/custom_theme = "/mnt/D/Dev/GameDev/assets/godot-ui/minimal_theme.tres"
+interface/multi_window/maximize_window = true
+filesystem/file_dialog/show_hidden_files = true
+filesystem/import/blender/blender_path = "/usr/bin/blender"
+filesystem/import/fbx/fbx2gltf_path = "/mnt/D/Dev/GameDev/programs_tools/FBX2glTF-linux-x86_64/FBX2glTF-linux-x86_64"
+text_editor/appearance/whitespace/draw_spaces = true
+text_editor/behavior/indent/type = 1
+text_editor/behavior/indent/size = 2
+text_editor/external/exec_path = "nvim"
+text_editor/external/exec_flags = "--server ./godothost --remote-send \"<C-\\><C-N>:n {file}<CR>{line}G{col}|\""
+editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
+run/window_placement/game_embed_mode = 2
+run/platforms/linuxbsd/prefer_wayland = true
+network/connection/network_mode = 1
+debugger/auto_switch_to_remote_scene_tree = true
+export/android/java_sdk_path = ""
+export/android/android_sdk_path = ""
+export/android/debug_keystore = "/home/mono/.local/share/godot/keystores/debug.keystore"
+export/android/debug_keystore_pass = "android"
+export/macos/rcodesign = ""
+export/web/http_port = 8060
+export/web/tls_key = ""
+export/web/tls_certificate = ""
+export/windows/rcedit = ""
+export/windows/osslsigncode = ""
+export/windows/wine = ""
+_default_feature_profile = "default"
+_use_favorites_root_selection = false
+network/debug_adapter/request_timeout = 1000
+editors/grid_map/editor_side = 1
+dotnet/editor/external_editor = 6
+dotnet/editor/custom_exec_path = "nvim"
+dotnet/editor/custom_exec_path_args = "--server ./godothost --remote-send \"<C-\\><C-N>:n {file}<CR>{line}G{col}|\""
+dotnet/build/verbosity_level = 2
+dotnet/build/problems_layout = 1
+plugins/filesystem_drawer/drawer_enabled = true
+plugins/filesystem_drawer/shortcut = "res://addons/filesystem_drawer/default_shortcut.tres"
+debug_draw_3d/settings/telemetry_state = 2
+_editor_settings_advanced_mode = true
+_project_settings_advanced_mode = true
+_export_template_download_directory = ""
+_script_setup_templates_dictionary = {
+"A": "0ObjectEmpty",
+"Af": "0ObjectEmpty",
+"Aff": "0ObjectEmpty",
+"Affi": "0ObjectEmpty",
+"Affix": "0ObjectEmpty",
+"AffixR": "0ObjectEmpty",
+"AffixRe": "0ObjectEmpty",
+"AffixRes": "0ObjectEmpty",
+"AffixReso": "0ObjectEmpty",
+"AffixResou": "0ObjectEmpty",
+"AffixResour": "0ObjectEmpty",
+"AffixResourc": "0ObjectEmpty",
+"AffixResource": "0ObjectEmpty",
+"AnimatableBody3D": "1NodeSimple",
+"AnimationTree": "1NodeSimple",
+"Area3D": "1NodeSimple",
+"Button": "1NodeSimple",
+"CSGBox3D": "1NodeSimple",
+"CenterContainer": "1NodeSimple",
+"CharacterBody3D": "1NodeSimple",
+"Control": "0NodeDefault",
+"DungeonRoom3D": "0NodeDefault",
+"GPUParticles3D": "1NodeSimple",
+"HBoxContainer": "1NodeSimple",
+"Label": "1NodeSimple",
+"MeshInstance3D": "1NodeSimple",
+"N": "0ObjectEmpty",
+"NavigationAgent3D": "1NodeSimple",
+"No": "0ObjectEmpty",
+"Nod": "0ObjectEmpty",
+"Node": "0ObjectEmpty",
+"Node3": "0ObjectEmpty",
+"Node3D": "1NodeSimple",
+"Panel": "1NodeSimple",
+"PanelContainer": "1NodeSimple",
+"ProgressBar": "1NodeSimple",
+"R": "0ObjectEmpty",
+"RayCast3D": "1NodeSimple",
+"Re": "0ObjectEmpty",
+"Reo": "0ObjectEmpty",
+"Reos": "0ObjectEmpty",
+"Res": "0ObjectEmpty",
+"Reso": "0ObjectEmpty",
+"Resou": "0ObjectEmpty",
+"Resour": "0ObjectEmpty",
+"Resourc": "0ObjectEmpty",
+"Resource": "0ObjectEmpty",
+"RigidBody3D": "1NodeSimple",
+"ShapeCast3D": "1NodeSimple",
+"SkeletonIK3D": "1NodeSimple",
+"StaticBody3D": "1NodeSimple",
+"TextureProgressBar": "1NodeSimple",
+"Timer": "1NodeSimple",
+"r": "0ObjectEmpty",
+"re": "0ObjectEmpty",
+"res": "0ObjectEmpty",
+"reso": "0ObjectEmpty",
+"resou": "0ObjectEmpty"
+}
+_script_setup_use_script_templates = true
+plugin/script_ide/outline_position_right = false
+plugin/script_ide/properties = false
+plugin/script_ide/classes = false
+plugin/script_ide/constants = false
+plugin/script_ide/auto_navigate_in_filesystem_dock = false
+shortcuts = [{
+"name": "spatial_editor/instant_translate",
+"shortcuts": [SubResource("InputEventKey_baupq")]
+}, {
+"name": "spatial_editor/instant_rotate",
+"shortcuts": [SubResource("InputEventKey_protj")]
+}, {
+"name": "spatial_editor/instant_scale",
+"shortcuts": [SubResource("InputEventKey_j0v75")]
+}, {
+"name": "spatial_editor/view_environment",
+"shortcuts": [SubResource("InputEventKey_bunet")]
+}, {
+"name": "spatial_editor/view_gizmos",
+"shortcuts": [SubResource("InputEventKey_51kla")]
+}, {
+"name": "editor/clear_output",
+"shortcuts": [SubResource("InputEventKey_cfllg")]
+}, {
+"name": "spatial_editor/view_cinematic_preview",
+"shortcuts": [SubResource("InputEventKey_adpck")]
+}, {
+"name": "spatial_editor/viewport_zoom_modifier_1",
+"shortcuts": [SubResource("InputEventKey_jiyx6")]
+}, {
+"name": "spatial_editor/viewport_zoom_modifier_2",
+"shortcuts": []
+}, {
+"name": "editor/distraction_free_mode",
+"shortcuts": [SubResource("InputEventKey_ds2mr"), SubResource("InputEventKey_na1i2")]
+}, {
+"name": "editor/bottom_panel_expand",
+"shortcuts": [SubResource("InputEventKey_ma22t"), SubResource("InputEventKey_60ugw")]
+}]
+metadata/script_setup_templates_dictionary = {
+"Area3D": "1NodeSimple",
+"Node3D": "1NodeSimple",
+"Timer": "1NodeSimple"
+}
