@@ -248,7 +248,8 @@ function nvims() {
 
 # utils
 changeWorkTree(){
-  selected=`git worktree list | fzf | cut -d' ' -f1`
+  # selected=`git worktree list | fzf | cut -d' ' -f1`
+  selected=`git worktree list --porcelain | awk '/^worktree/ {path=$2} /^branch/ {gsub(/refs\/heads\//, "", $2); print $2 " => " path}' | fzf | cut -d' ' -f3`
   cd $selected
 }
 alias gw=changeWorkTree
