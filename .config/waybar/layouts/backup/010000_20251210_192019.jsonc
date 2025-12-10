@@ -76,8 +76,8 @@
     "format": "{}",
     "rotate": 0,
     "exec": "echo ; echo  logout",
-    "on-click": "hyde-shell logoutlaunch 2",
-    "on-click-right": "hyde-shell logoutlaunch 1",
+    "on-click": "logoutlaunch.sh 2",
+    "on-click-right": "logoutlaunch.sh 1",
     "interval": 86400, // once every day
     "tooltip": true,
   },
@@ -86,7 +86,7 @@
     "format": "{}",
     "rotate": 0,
     "exec": "echo ; echo 󰅇 clipboard history",
-    "on-click": "sleep 0.1 && hyde-shell cliphist -c",
+    "on-click": "sleep 0.1 && notify-send scrPath && cliphist.sh -c",
     "on-click-right": "sleep 0.1 && cliphist.sh d",
     "on-click-middle": "sleep 0.1 && cliphist.sh w",
     "interval": 86400, // once every day
@@ -261,9 +261,9 @@
     "format-source": "",
     "format-source-muted": "",
     "on-click": "pavucontrol -t 4",
-    "on-click-middle": "hyde-shell volumecontrol -i m",
-    "on-scroll-up": "hyde-shell volumecontrol -i i",
-    "on-scroll-down": "hyde-shell volumecontrol -i d",
+    "on-click-middle": "volumecontrol.sh -i m",
+    "on-scroll-up": "volumecontrol.sh -i i",
+    "on-scroll-down": "volumecontrol.sh -i d",
     "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
     "scroll-step": 5,
   },
@@ -271,7 +271,7 @@
   "custom/keybindhint": {
     "format": " ",
     "rotate": 0,
-    "on-click": "hyde-shell keybinds_hint",
+    "on-click": "keybinds_hint.sh",
   },
 
   // modules for padding //
