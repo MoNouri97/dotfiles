@@ -24,7 +24,6 @@
     "custom/r_end",
     "custom/l_end",
     "wlr/taskbar",
-    "hyprland/workspaces",
     "custom/spotify",
     "custom/r_end",
     "",
@@ -86,7 +85,7 @@
     "format": "{}",
     "rotate": 0,
     "exec": "echo ; echo 󰅇 clipboard history",
-    "on-click": "sleep 0.1 && notify-send scrPath && cliphist.sh -c",
+    "on-click": "sleep 0.1 && cliphist.sh c",
     "on-click-right": "sleep 0.1 && cliphist.sh d",
     "on-click-middle": "sleep 0.1 && cliphist.sh w",
     "interval": 86400, // once every day
