@@ -9,7 +9,7 @@
 CURRENT_WORKSPACE=$(hyprctl activeworkspace -j | jq '.id')
 
 # Launch Godots in the current workspace
-hyprctl dispatch exec "[workspace $CURRENT_WORKSPACE] /home/mono/Downloads/Godots.x86_64"
+hyprctl dispatch exec "[workspace $CURRENT_WORKSPACE] godots"
 notify-send "Launched Godots in workspace $CURRENT_WORKSPACE"
 
 # Calculate the next workspace
