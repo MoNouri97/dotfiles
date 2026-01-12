@@ -275,6 +275,8 @@ alias cd=z
 GODOT="/home/mono/.local/share/godot/app_userdata/Godots/versions/Godot_v4_3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux.x86_64"
 alias godot=$GODOT
 alias godotrun="dotnet build && godot"
+alias bios="sudo systemctl reboot --firmware-setup"
+
 # export PATH="$GODOT:$PATH"
 
 # mac iterm2
