@@ -62,7 +62,7 @@ physical_keycode = 4194320
 
 [resource]
 interface/editor/dock_tab_style = 1
-interface/editor/display_scale = 2
+interface/editor/display_scale = 4
 interface/editor/editor_screen = -4
 interface/editor/code_font_contextual_ligatures = 0
 interface/editor/main_font = "/mnt/D/Dev/GameDev/programs_tools/fonts/Inter-4.1/InterVariable.ttf"
@@ -174,6 +174,7 @@ _script_setup_templates_dictionary = {
 "GPUParticles3D": "1NodeSimple",
 "HBoxContainer": "1NodeSimple",
 "Label": "1NodeSimple",
+"MarginContainer": "1NodeSimple",
 "MeshInstance3D": "0NodeDefault",
 "N": "0ObjectEmpty",
 "NavigationAgent3D": "1NodeSimple",
