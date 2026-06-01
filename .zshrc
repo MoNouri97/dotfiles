@@ -6,6 +6,7 @@ export LC_ALL="en_US.UTF-8"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+# export srcPath ="$HOME/.local/lib/hyde/swwwallselect.sh"
 ### spark
 # export SPARK_HOME=/opt/spark
 # export PATH=$SPARK_HOME/bin:$PATH
@@ -13,7 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 # dotnet 
 # Add .NET Core SDK tools
-export PATH=$HOME/.dotnet/tools:$PATH
+export PATH=$HOME/.local/lib/hyde:$HOME/.dotnet/tools:$PATH
 
 ### go
 # export PATH=$PATH:/usr/local/go/bin
@@ -275,6 +276,9 @@ alias cd=z
 GODOT="/home/mono/.local/share/godot/app_userdata/Godots/versions/Godot_v4_3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux.x86_64"
 alias godot=$GODOT
 alias godotrun="dotnet build && godot"
+alias bios="sudo systemctl reboot --firmware-setup"
+swww() { awww "$@"; }
+
 # export PATH="$GODOT:$PATH"
 
 # mac iterm2
