@@ -4,15 +4,15 @@ gui:
   expandFocusedSidePanel: true
   nerdFontsVersion: "3"
   showFileIcons: false
-  border: "normal" #"rounded"
+  border: "rounded" #"rounded" "normal"
 promptToReturnFromSubprocess: true
 git:
   log:
     showGraph: always
     showWholeGraph: true
-  pagers:
-    - colorArg: always
-      pager: delta --dark --paging=never
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
 os:
   edit: "nvim {{filename}}"
   # --remote-send "<cmd>lua require('core.scripts.lazygit-open-file')('{{filename}}', '{{line}}')<CR>"
