@@ -285,3 +285,4 @@ swww() { awww "$@"; }
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 fm6000 -r -c random
+export EDITOR='nvim'
