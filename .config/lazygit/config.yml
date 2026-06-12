@@ -10,9 +10,9 @@ git:
   log:
     showGraph: always
     showWholeGraph: true
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
 os:
   edit: "nvim {{filename}}"
   # --remote-send "<cmd>lua require('core.scripts.lazygit-open-file')('{{filename}}', '{{line}}')<CR>"

@@ -27,12 +27,6 @@ shift_pressed = true
 ctrl_pressed = true
 physical_keycode = 71
 
-[sub_resource type="InputEventKey" id="InputEventKey_cfllg"]
-command_or_control_autoremap = true
-alt_pressed = true
-keycode = 75
-unicode = 75
-
 [sub_resource type="InputEventKey" id="InputEventKey_adpck"]
 device = -1
 shift_pressed = true
@@ -237,9 +231,6 @@ shortcuts = [{
 }, {
 "name": "spatial_editor/view_gizmos",
 "shortcuts": [SubResource("InputEventKey_51kla")]
-}, {
-"name": "editor/clear_output",
-"shortcuts": [SubResource("InputEventKey_cfllg")]
 }, {
 "name": "spatial_editor/view_cinematic_preview",
 "shortcuts": [SubResource("InputEventKey_adpck")]
