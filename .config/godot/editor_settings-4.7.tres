@@ -60,6 +60,12 @@ alt_pressed = true
 keycode = 75
 unicode = 75
 
+[sub_resource type="InputEventKey" id="InputEventKey_m25uv"]
+device = -1
+alt_pressed = true
+ctrl_pressed = true
+physical_keycode = 82
+
 [resource]
 resource_local_to_scene = false
 resource_name = ""
@@ -505,6 +511,9 @@ shortcuts = [{
 }, {
 "name": "editor/clear_output",
 "shortcuts": [SubResource("InputEventKey_j7yb6")]
+}, {
+"name": "filesystem_dock/new_resource",
+"shortcuts": [SubResource("InputEventKey_m25uv")]
 }]
 builtin_action_overrides = []
 metadata/script_setup_templates_dictionary = {
