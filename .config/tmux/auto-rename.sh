@@ -12,5 +12,9 @@ if [[ "$name" == "" || "$name" == "Window" ]]; then
     tmux setw automatic-rename off
     tmux rename-window "WEB"
     ;;
+  */BoardGame*)
+    tmux setw automatic-rename off
+    tmux rename-window "Cards"
+    ;;
   esac
 fi
