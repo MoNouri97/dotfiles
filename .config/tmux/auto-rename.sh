@@ -16,5 +16,13 @@ if [[ "$name" == "" || "$name" == "Window" ]]; then
     tmux setw automatic-rename off
     tmux rename-window "Cards"
     ;;
+  */nvim*)
+    tmux setw automatic-rename off
+    tmux rename-window "NVIM"
+    ;;
+  */dotfiles*)
+    tmux setw automatic-rename off
+    tmux rename-window "CONFIG"
+    ;;
   esac
 fi
