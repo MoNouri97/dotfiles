@@ -24,5 +24,9 @@ if [[ "$name" == "" || "$name" == "Window" ]]; then
     tmux setw automatic-rename off
     tmux rename-window "CONFIG"
     ;;
+  */obsidian-vault*)
+    tmux setw automatic-rename off
+    tmux rename-window "OBSIDIAN"
+    ;;
   esac
 fi
