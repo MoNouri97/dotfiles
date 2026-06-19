@@ -1442,7 +1442,8 @@
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
                                             "^tv\\.parsec\\.www$",
-                                            "^com\\.github\\.wez\\.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -2181,6 +2182,41 @@
                                         "modifiers": [
                                             "left_command",
                                             "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Cmd+T => Ctrl+T in kitty",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": [
+                                            "control"
                                         ]
                                     }
                                 ],
