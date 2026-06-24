@@ -284,5 +284,8 @@ swww() { awww "$@"; }
 # mac iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-fm6000 -r -c random
 export EDITOR='nvim'
+export TERMINAL='ghostty'
+echo $EDITOR
+
+fm6000 -r -c random
