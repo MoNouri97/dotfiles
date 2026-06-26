@@ -3,6 +3,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export LC_ALL="en_US.UTF-8"
+export GPG_TTY=$(tty)
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -286,6 +287,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export EDITOR='nvim'
 export TERMINAL='ghostty'
-echo $EDITOR
 
 fm6000 -r -c random
+
+# Added by Antigravity
+export PATH="/Users/mohamednouri/.antigravity/antigravity/bin:$PATH"
+eval "$(tv init zsh)"
