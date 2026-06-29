@@ -20,7 +20,7 @@ notify-send "Launched Kitty in workspace $NEXT_WORKSPACE"
 # hyprctl dispatch exec "[workspace $NEXT_WORKSPACE] kitty tmux"
 project="board"
 DIR=$(zoxide query $project)
-hyprctl dispatch exec "[workspace $NEXT_WORKSPACE] kitty tmux new-session -s Game 'zsh -c \"cd $DIR && nvim . --listen ./godothost && zsh || zsh\"'"
+hyprctl dispatch exec "[workspace $NEXT_WORKSPACE] ghostty -e tmux new-session -s Game 'zsh -c \"cd $DIR && nvim . --listen ./godothost && zsh || zsh\"'"
 
 # Calculate the third workspace
 THIRD_WORKSPACE=$((CURRENT_WORKSPACE + 2))
