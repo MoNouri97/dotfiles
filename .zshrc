@@ -258,7 +258,12 @@ alias gw=changeWorkTree
 mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 
 connectDevice(){
-  selected=`adb devices | awk '/device$/ {print $1}' | fzf`
+  devices=( $(adb devices | awk '/device$/ {print $1}') )
+  if (( ${#devices[@]} == 1 )); then
+    selected=$devices[1]
+  else
+    selected=$(echo $devices | tr ' ' '\n' | fzf)
+  fi
   adb -s $selected reverse tcp:8081 tcp:8081
   echo "connected!"
 }
