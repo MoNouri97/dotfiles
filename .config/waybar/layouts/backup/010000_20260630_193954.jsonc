@@ -215,8 +215,8 @@
     "rotate": 0,
     "format": "{icon} {percent}%",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
-    "on-scroll-up": "brightnessctl set 1%+",
-    "on-scroll-down": "brightnessctl set 1%-",
+    "on-scroll-up": "brightnesscontrol.sh i",
+    "on-scroll-down": "brightnesscontrol.sh d",
     "min-length": 6,
   },
 

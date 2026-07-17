@@ -21,3 +21,4 @@ custom-shader = shaders/cursor-smear.glsl
 custom-shader-animation = always
 window-decoration = auto
 macos-titlebar-style = hidden
+confirm-close-surface = false
