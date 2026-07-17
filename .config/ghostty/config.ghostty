@@ -4,13 +4,14 @@ theme = Catppuccin Mocha
 # --- Fonts
 # font-family = "JetBrainsMono Nerd Font Mono"
 font-family = "Maple Mono"
-font-size = 16
+font-size = 24
 # --- Window / Appearance
 window-padding-x = 0
 window-padding-y = 0
 window-padding-balance
 
 background-opacity = 1.0
+background-blur = true
 
 # refresh with: ctrl+shift+, (M key in querty)
 
@@ -18,3 +19,5 @@ background-opacity = 1.0
 # --- Custom Shader (cursor trail like kitty)
 custom-shader = shaders/cursor-smear.glsl
 custom-shader-animation = always
+window-decoration = auto
+macos-titlebar-style = hidden

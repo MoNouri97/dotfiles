@@ -3,8 +3,8 @@ gui:
   showBottomLine: false
   expandFocusedSidePanel: true
   nerdFontsVersion: "3"
-  showFileIcons: false
-  border: "rounded" #"rounded" "normal"
+  showFileIcons: true
+  border: "normal" #"rounded" "normal"
 promptToReturnFromSubprocess: true
 git:
   log:
