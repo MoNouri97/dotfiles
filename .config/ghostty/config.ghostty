@@ -4,7 +4,7 @@ theme = Catppuccin Mocha
 # --- Fonts
 # font-family = "JetBrainsMono Nerd Font Mono"
 font-family = "Maple Mono"
-font-size = 24
+font-size = 12
 # --- Window / Appearance
 window-padding-x = 0
 window-padding-y = 0
