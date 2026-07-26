@@ -25,5 +25,5 @@ echo "$end_time" >"$timer_file"
 
 # wait for the timer to finish, then notify
 sleep "${mins}m"
-notify-send "⏰ Timer done" "${mins} minute timer finished"
+notify-send -i -u critical "⏰ Timer done" "${mins} minute timer finished"
 tmux display-message "⏰ Timer done: ${mins} minutes"
