@@ -8,8 +8,15 @@
         "baseURL": "http://localhost:11434/v1",
       },
       "models": {
-        "llama2": {
-          "name": "Llama 2",
+        "qwen3:4b": {
+          "name": "Qwen3 4B (local)",
+          "tool_call": true,
+          "reasoning": true,
+        },
+        "gemma3:4b": {
+          "name": "Gemma3 4B (local)",
+          "tool_call": false,
+          "reasoning": false,
         },
       },
     },
