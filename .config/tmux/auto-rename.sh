@@ -16,10 +16,6 @@ if [[ "$name" == "" || "$name" == "Window" ]]; then
     tmux setw automatic-rename off
     tmux rename-window "Cards"
     ;;
-  */GameDev*)
-    tmux setw automatic-rename off
-    tmux rename-window "GameDev"
-    ;;
   */nvim*)
     tmux setw automatic-rename off
     tmux rename-window "NVIM"

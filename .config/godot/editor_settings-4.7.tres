@@ -54,17 +54,17 @@ shift_pressed = true
 ctrl_pressed = true
 physical_keycode = 4194320
 
-[sub_resource type="InputEventKey" id="InputEventKey_j7yb6"]
-command_or_control_autoremap = true
-alt_pressed = true
-keycode = 75
-unicode = 75
-
 [sub_resource type="InputEventKey" id="InputEventKey_m25uv"]
 device = -1
 alt_pressed = true
 ctrl_pressed = true
 physical_keycode = 82
+
+[sub_resource type="InputEventKey" id="InputEventKey_j7yb6"]
+command_or_control_autoremap = true
+alt_pressed = true
+keycode = 75
+unicode = 75
 
 [resource]
 resource_local_to_scene = false
@@ -177,6 +177,7 @@ filesystem/import/blender/rpc_server_uptime = 5
 filesystem/import/fbx/fbx2gltf_path = "/mnt/D/Dev/GameDev/programs_tools/FBX2glTF-linux-x86_64/FBX2glTF-linux-x86_64"
 filesystem/tools/oidn/oidn_denoise_path = ""
 docks/filesystem/thumbnail_size = 64
+docks/filesystem/ask_before_moving_files = false
 docks/property_editor/auto_refresh_interval = 0.2
 docks/property_editor/subresource_hue_tint = 0.75
 text_editor/theme/color_theme = "Default"
@@ -484,7 +485,7 @@ _editor_log_filter_2 = true
 _editor_log_filter_1 = true
 _editor_log_filter_3 = true
 _editor_log_filter_4 = true
-_editor_log_collapse = true
+_editor_log_collapse = false
 shortcuts = [{
 "name": "spatial_editor/instant_translate",
 "shortcuts": [SubResource("InputEventKey_baupq")]
@@ -510,11 +511,11 @@ shortcuts = [{
 "name": "editor/bottom_panel_expand",
 "shortcuts": [SubResource("InputEventKey_ma22t"), SubResource("InputEventKey_60ugw")]
 }, {
-"name": "editor/clear_output",
-"shortcuts": [SubResource("InputEventKey_j7yb6")]
-}, {
 "name": "filesystem_dock/new_resource",
 "shortcuts": [SubResource("InputEventKey_m25uv")]
+}, {
+"name": "editor/clear_output",
+"shortcuts": [SubResource("InputEventKey_j7yb6")]
 }]
 builtin_action_overrides = []
 metadata/script_setup_templates_dictionary = {
