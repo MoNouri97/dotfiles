@@ -4,7 +4,7 @@ gui:
   expandFocusedSidePanel: true
   nerdFontsVersion: "3"
   showFileIcons: true
-  border: "normal" #"rounded" "normal"
+  border: "rounded" #"rounded" "normal"
   sidePanelWidth: 0.25
 promptToReturnFromSubprocess: true
 git:

@@ -258,6 +258,26 @@ changeWorkTree(){
 alias gw=changeWorkTree
 mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 
+pairQR() {
+  local name="studio-$(openssl rand -hex 6)"
+  local pass="$(openssl rand -hex 6)"
+  local svc
+
+  qrencode -t ANSIUTF8 "WIFI:T:ADB;S:${name};P:${pass};;"
+  echo "Phone: Wireless debugging → Pair device with QR code → scan the above"
+
+  for i in {1..60}; do
+    svc=$(adb mdns services 2>/dev/null \
+      | awk -v n="$name" '$1==n && /_adb-tls-pairing/ {print $3}')
+    [[ -n $svc ]] && break
+    sleep 1
+  done
+
+  [[ -z $svc ]] || { adb pair "$svc" "$pass" && connectDevice; return }
+  echo "timed out — phone and Mac on the same network?"
+  return 1
+}
+
 connectDevice(){
   devices=( $(adb devices | awk '/device$/ {print $1}') )
   if (( ${#devices[@]} == 1 )); then
