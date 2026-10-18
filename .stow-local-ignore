@@ -14,6 +14,7 @@ _darcs
 
 \.git
 \.gitignore
+\.gitmodules
 
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
@@ -21,3 +22,9 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+# Machine-specific: keep this machine's own Hyprland config
+^/\.config/hypr(/.*)?$
+
+# This repo's installer, not a dotfile
+^/apply\.sh$
