@@ -51,12 +51,13 @@
 
 -- Window blur (Omarchy's defaults explicitly disable it).
 hl.config({
-  decoration = {
-    blur = {
-      enabled = true,
-      size = 8,
-      passes = 3,
-      new_optimizations = true,
-    },
-  },
+	decoration = {
+		blur = {
+			enabled = true,
+			size = 8,
+			passes = 3,
+			new_optimizations = true,
+			variant = "acrylic",
+		},
+	},
 })

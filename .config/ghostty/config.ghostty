@@ -10,7 +10,7 @@ window-padding-x = 0
 window-padding-y = 0
 window-padding-balance
 
-background-opacity = 1.0
+background-opacity = 0.95
 background-blur = true
 
 # refresh with: ctrl+shift+, (M key in querty)

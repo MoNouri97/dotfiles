@@ -35,3 +35,15 @@ o.bind("SUPER + Q", "Close window", hl.dsp.window.close())
 -- (Omarchy's SUPER+ALT+RETURN still opens tmux as well.)
 hl.unbind("SUPER + RETURN")
 o.bind("SUPER + RETURN", "Tmux", { omarchy = "terminal-tmux" })
+
+-- SUPER+W was "Close window"; now toggles the focused window between floating
+-- and tiled. (Close window is SUPER+Q; Omarchy's SUPER+T does the same thing.)
+hl.unbind("SUPER + W")
+o.bind("SUPER + W", "Toggle floating", hl.dsp.window.float({ action = "toggle" }))
+
+-- SUPER+E: open the file manager (Omarchy's default is SUPER+SHIFT+F).
+o.bind("SUPER + E", "File manager", { omarchy = "nautilus" })
+
+-- SUPER+B: browser; SUPER+ALT+B: private browsing (defaults use SUPER+SHIFT+B / SUPER+SHIFT+ALT+B).
+o.bind("SUPER + B", "Browser", { omarchy = "browser" })
+o.bind("SUPER + ALT + B", "Browser (private)", { omarchy = "browser --private" })
