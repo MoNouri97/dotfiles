@@ -1,0 +1,7 @@
+[safe]
+	directory = /mnt/D/Dev/*
+[user]
+	email = mohamed.nouri.1997@gmail.com
+	name = Mohamed Nouri
+[pull]
+	rebase = true
