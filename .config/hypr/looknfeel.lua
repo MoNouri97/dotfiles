@@ -57,7 +57,22 @@ hl.config({
 			size = 8,
 			passes = 3,
 			new_optimizations = true,
-			variant = "acrylic",
+			-- variant = "acrylic",
 		},
 	},
 })
+
+hl.config({
+	general = {
+		gaps_in = 2,
+		gaps_out = 4,
+		border_size = 2,
+	},
+})
+-- ── Smart gaps ───────────────────────────────────────────────────────────────
+-- Drop the gaps and border when a workspace ends up with a single window.
+-- w[tv1] = one tiled window, f[1] = one floating window.
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
+o.window({ float = false, workspace = "w[tv1]" }, { border_size = 0, rounding = 0 })
+o.window({ float = false, workspace = "f[1]" }, { border_size = 0, rounding = 0 })

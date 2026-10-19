@@ -23,8 +23,8 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-# Machine-specific: keep this machine's own Hyprland config
-^/\.config/hypr(/.*)?$
+# Machine-generated Hyprland monitor config (written by hyprmoncfg), never stow it
+^/\.config/hypr/hyprmoncfg-monitors\.lua$
 
 # This repo's installer, not a dotfile
 ^/apply\.sh$
