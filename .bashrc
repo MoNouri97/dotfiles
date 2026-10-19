@@ -62,6 +62,6 @@ alias nvimconf='cd ~/.config/nvim && nvim && cd -'
 # Uses fastfetch's system config (/etc/fastfetch/config.jsonc) for the Omarchy
 # keys/colors, so no user-level config is created (an existing
 # ~/.config/fastfetch/config.jsonc would shadow it and break the About window).
-if [[ -t 1 ]] && command -v fastfetch >/dev/null 2>&1; then
-  fastfetch --logo Linux_small --structure Title:Host:OS:Kernel:Uptime:Memory
-fi
+# if [[ -t 1 ]] && command -v fastfetch >/dev/null 2>&1; then
+#   fastfetch --logo Linux_small --structure Title:Host:OS:Kernel:Uptime:Memory
+# fi
