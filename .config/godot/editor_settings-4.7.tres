@@ -60,12 +60,6 @@ alt_pressed = true
 ctrl_pressed = true
 physical_keycode = 82
 
-[sub_resource type="InputEventKey" id="InputEventKey_j7yb6"]
-command_or_control_autoremap = true
-alt_pressed = true
-keycode = 75
-unicode = 75
-
 [resource]
 resource_local_to_scene = false
 resource_name = ""
@@ -91,7 +85,7 @@ interface/editor/fonts/font_hinting = 0
 interface/editor/fonts/font_subpixel_positioning = 1
 interface/editor/fonts/font_disable_embedded_bitmaps = true
 interface/editor/fonts/font_allow_msdf = true
-interface/editor/fonts/main_font = "/mnt/D/Dev/GameDev/programs_tools/fonts/Inter-4.1/InterVariable.ttf"
+interface/editor/fonts/main_font = ""
 interface/editor/fonts/main_font_bold = ""
 interface/editor/fonts/code_font = ""
 interface/editor/timers/dragging_hover_wait_seconds = 0.5
@@ -513,9 +507,6 @@ shortcuts = [{
 }, {
 "name": "filesystem_dock/new_resource",
 "shortcuts": [SubResource("InputEventKey_m25uv")]
-}, {
-"name": "editor/clear_output",
-"shortcuts": [SubResource("InputEventKey_j7yb6")]
 }]
 builtin_action_overrides = []
 metadata/script_setup_templates_dictionary = {

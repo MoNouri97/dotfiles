@@ -14,6 +14,7 @@ _darcs
 
 \.git
 \.gitignore
+\.gitmodules
 
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
@@ -21,3 +22,9 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+# Machine-generated Hyprland monitor config (written by hyprmoncfg), never stow it
+^/\.config/hypr/hyprmoncfg-monitors\.lua$
+
+# This repo's installer, not a dotfile
+^/apply\.sh$
