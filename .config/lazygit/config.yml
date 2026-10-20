@@ -14,14 +14,18 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --dark --paging=never
+      command: delta --dark --paging=never
 os:
-  edit: "nvim {{filename}}"
-  # --remote-send "<cmd>lua require('core.scripts.lazygit-open-file')('{{filename}}', '{{line}}')<CR>"
-  # editCommandTemplate: '{{editor}} --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
-  # editCommandTemplate: nvim --server /tmp/nvim-server.pipe --remote-send "<cmd>lua require('scripts.lazygit')('{{filename}}', '{{line}}')<CR>"
+  # Same as lazygit's built-in `nvim-remote` preset, but with `--remote` instead
+  # of `--remote-tab` so the file replaces the current buffer rather than opening
+  # a new tab. Keeping `editPreset` set means `suspend` still resolves correctly:
+  # outside Neovim ($NVIM unset) lazygit suspends and opens nvim in the terminal.
+  editPreset: "nvim-remote"
+  edit: '[ -z "$NVIM" ] && (nvim -- {{filename}}) || (nvim --server "$NVIM" --remote-send "q" && nvim --server "$NVIM" --remote {{filename}})'
+  editAtLine: '[ -z "$NVIM" ] && (nvim +{{line}} -- {{filename}}) || (nvim --server "$NVIM" --remote-send "q" && nvim --server "$NVIM" --remote {{filename}} && nvim --server "$NVIM" --remote-send ":{{line}}<CR>")'
+  openDirInEditor: '[ -z "$NVIM" ] && (nvim -- {{dir}}) || (nvim --server "$NVIM" --remote-send "q" && nvim --server "$NVIM" --remote {{dir}})'
 customCommands:
   - key: "a"
     context: "localBranches"
