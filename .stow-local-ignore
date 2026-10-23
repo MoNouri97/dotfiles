@@ -28,3 +28,6 @@ _darcs
 
 # This repo's installer, not a dotfile
 ^/apply\.sh$
+
+# Machine-local secrets, never stowed or committed
+^/\.config/omarchy/email\.local$

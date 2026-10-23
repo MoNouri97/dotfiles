@@ -57,6 +57,7 @@ game() { z "$1" && nvim . --listen ./godothost; }
 # ── Personal aliases ────────────────────────────────────────────────────────
 alias dotconf='cd ~/Work/dotfiles && nvim . && cd -'
 alias nvimconf='cd ~/.config/nvim && nvim && cd -'
+alias ask='cd ~/Work && opencode'
 
 # ── Compact system summary on new interactive shells ────────────────────────
 # Uses fastfetch's system config (/etc/fastfetch/config.jsonc) for the Omarchy
