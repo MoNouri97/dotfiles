@@ -23,11 +23,22 @@ require("hypr.looknfeel")
 require("hypr.windows")
 require("hypr.autostart")
 
+-- Load settings written by OmaControl (omacontrol:managed).
+-- It belongs above the toggles below: those turn the laptop
+-- display off with a monitor rule, and a rule of ours read
+-- afterwards would replace it and put the display back on.
+require("hypr.omacontrol")
+
 -- Toggle config flags dynamically.
 require("default.hypr.toggles")
 
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
+
+-- GTK 4.24+ binds ext-background-effect-v1 and sends an empty blur region,
+-- which makes Hyprland 0.56 skip compositor blur for every GTK4 window
+-- (Ghostty, Nautilus, etc.). Hiding the protocol from GTK restores the blur.
+hl.env("GDK_WAYLAND_DISABLE", "ext_background_effect_manager_v1")
 
 do
 	local path = (os.getenv("XDG_CONFIG_HOME") or os.getenv("HOME") .. "/.config") .. "/hypr/hyprmoncfg-monitors.lua"

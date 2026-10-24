@@ -31,6 +31,11 @@ o.window({ class = godot, title = "^(Alert!)$" }, { float = true, center = true,
 -- ── Misc floating tools ──────────────────────────────────────────────────────
 o.window("^(blender|[Ll]utris|.*protonvpn.*|[Ss]ignal|eog)$", { float = true })
 
+-- ── Nautilus ─────────────────────────────────────────────────────────────────
+-- Slightly translucent file manager. Opacity is a product of all matching
+-- rules, so this multiplies with Omarchy's default 0.985/0.96 fade.
+o.window("^(org\\.gnome\\.Nautilus)$", { opacity = "0.97 0.95" })
+
 -- ── Messenger call popup ─────────────────────────────────────────────────────
 -- The messenger.com call window shares its class with the main Messenger
 -- window, and Chromium opens it as "about:blank" — the title only becomes

@@ -47,3 +47,7 @@ o.bind("SUPER + E", "File manager", { omarchy = "nautilus" })
 -- SUPER+B: browser; SUPER+ALT+B: private browsing (defaults use SUPER+SHIFT+B / SUPER+SHIFT+ALT+B).
 o.bind("SUPER + B", "Browser", { omarchy = "browser" })
 o.bind("SUPER + ALT + B", "Browser (private)", { omarchy = "browser --private" })
+
+-- SUPER+SHIFT+P was "Google Photos in omarchy"; now takes a region screenshot.
+hl.unbind("SUPER + SHIFT + P")
+o.bind("SUPER + SHIFT + P", "Screenshot (region)", "omarchy capture screenshot region")

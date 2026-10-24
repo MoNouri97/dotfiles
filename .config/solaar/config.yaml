@@ -41,6 +41,7 @@
     headset-signature-shutdown, headset-signature-passive, logivoice-nr-state, logivoice-ng-state, logivoice-comp-state, logivoice-deesser-state, logivoice-depopper-state,
     logivoice-limiter-state, logivoice-hpf-state]
   _modelId: C08B00000000
+  _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _unitId: 1E005E00
   dpi: 1200
   led_control: false
