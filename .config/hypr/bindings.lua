@@ -51,3 +51,12 @@ o.bind("SUPER + ALT + B", "Browser (private)", { omarchy = "browser --private" }
 -- SUPER+SHIFT+P was "Google Photos in omarchy"; now takes a region screenshot.
 hl.unbind("SUPER + SHIFT + P")
 o.bind("SUPER + SHIFT + P", "Screenshot (region)", "omarchy capture screenshot region")
+
+-- SUPER+CTRL+LEFT/RIGHT: step through workspaces the way the three-finger
+-- horizontal swipe does (adjacent number, empty workspaces included).
+-- Note: these keys were previously bound to group prev/next
+-- ("Move grouped window focus left/right").
+hl.unbind("SUPER + CTRL + LEFT")
+o.bind("SUPER + CTRL + LEFT", "Previous workspace", hl.dsp.focus({ workspace = "r-1" })) --(r is for current monitro)
+hl.unbind("SUPER + CTRL + RIGHT")
+o.bind("SUPER + CTRL + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "r+1" }))
