@@ -1,321 +1,133 @@
-# active# If you come from bash you might have to change your $PATH.
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Omarchy environment (OMARCHY_PATH + PATH), needed even for non-interactive shells
+[[ -r /usr/share/omarchy/default/bash/env-bootstrap ]] && source /usr/share/omarchy/default/bash/env-bootstrap
+
+# If not running interactively, don't do anything else
+[[ $- != *i* ]] && return
+
+# Source only the Zsh-compatible Omarchy defaults
+# (skipping bash-specific shell, init, completions, and inputrc)
+source "$OMARCHY_PATH/default/bash/envs"
+source "$OMARCHY_PATH/default/bash/aliases"
+source "$OMARCHY_PATH/default/bash/functions"
+
+# Zsh equivalents of the bash shopt settings from .bashrc
+setopt AUTOCD
+setopt CORRECT
+setopt CORRECT_ALL
+
+# ── Zsh Completion (Visual Menu Selection) ──────────────────────────────────
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case-insensitive
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+setopt COMPLETE_IN_WORD
+
+# ── Environment ──────────────────────────────────────────────────────────────
 export PATH=$HOME/.local/bin:$PATH
 export LC_ALL="en_US.UTF-8"
 export GPG_TTY=$(tty)
 export CLAUDE_CODE_DISABLE_MOUSE=1
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-# export srcPath ="$HOME/.local/lib/hyde/swwwallselect.sh"
-### spark
-# export SPARK_HOME=/opt/spark
-# export PATH=$SPARK_HOME/bin:$PATH
-# export PYSPARK_DRIVER_PYTHON=jupyter
-# export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
-# dotnet 
-# Add .NET Core SDK tools
-export PATH=$HOME/.local/lib/hyde:$HOME/.dotnet/tools:$PATH
-
-### go
-# export PATH=$PATH:/usr/local/go/bin
-# export GOPATH=$HOME/.go/bin
-
-### ruby
-# export PATH=$HOME/.rbenv/bin:$PATH
-# eval "$(rbenv init -)"
-# export PATH=$HOME/.rbenv/plugins/ruby-build/bin:$PATH
-
-# java
-# export PATH="/home/mono/.jdks/openjdk-15.0.1/bin":$PATH
-# export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
-
-# Java Mac
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
-export PATH="$JAVA_HOME:$PATH"
-
-export ANDROID_HOME=$HOME/Library/Android/sdk
-# export ANDROID_HOME=$HOME/Android/Sdk/
-# MAC
-export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH=/opt/homebrew/bin/:/usr/local/bin/:$PATH
+export EDITOR='nvim'
+export TERMINAL='ghostty'
 
-# export ANDROID_SDK=/home/mono/Android/Sdk/
-# export ANDROID_HOME=/home/mono/Android/Sdk/
-# export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
+# ── Plugin replacements (No Oh My Zsh) ───────────────────────────────────────
+# sudo
+alias sudo='sudo '
 
-# cd /mnt/D_partition/Download/Dev/React-Projects/a-star
+# colored-man-pages
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;32m'
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#  ZSH_THEME="random"
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="kolo"
-# ZSH_THEME="awesomepanda"
-#  ZSH_THEME="pmcgee"
-#  ZSH_THEME="jispwoso"
-#  ZSH_THEME="amuse"
-#  ZSH_THEME="amusemod"
-#  ZSH_THEME="agnoster"
-# ZSH_THEME="powerlevel9k/powerlevel9k"
-# ZSH_THEME="myTheme"
-# ZSH_THEME="my"
-
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=( 
-  git 
-  nvm
-  sudo 
-  zsh-256color
-	# vi-mode
-	colored-man-pages
-	command-not-found
-	# zsh-syntax-highlighting
-	history-substring-search
-	zsh-autosuggestions
-  fzf
-)
-
-source $ZSH/oh-my-zsh.sh
-# User configuration
-# source ~/Dev/other/.conf.sh
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# this is to allow lazygit to send tabs remotely to nvim
-# alias nvim='nvim --listen /tmp/nvim-server.pipe'
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
+# fzf
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# zsh-autosuggestions & history-substring-search (Arch Linux packages)
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+if [ -f /usr/share/zsh/plugins/history-substring-search/zsh-history-substring-search.zsh ]; then
+  source /usr/share/zsh/plugins/history-substring-search/zsh-history-substring-search.zsh
+fi
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# ── Aliases (merged from .bashrc and .zshrc) ─────────────────────────────────
+# ls aliases (eza)
+alias l='eza --classify=auto -h --group-directories-first --icons=auto'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lsd='ls -d'
+alias l.='ls -d .*'
 
- 
-# Example aliases
-# alias code="codium"
+# Personal aliases
 alias v="nvim"
 alias vim=nvim
-alias nvimconf="cd $HOME/dotfiles/.config/nvim && nvim  && cd"
-alias vsconfig="code $HOME/zshrc"
-alias config="v $HOME/.zshrc"
-alias zshconf="v $HOME/.zshrc"
-alias ohmyzsh="v $HOME/oh-my-zsh"
-# for dotfiles
-alias dotconf="cd $HOME/dotfiles && nvim . && cd -";
-# # OLD WAY
-# alias dotconf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-# run this : dotconf config --local status.showUntrackedFiles no 
-#
-
-alias xampp="sudo /opt/lampp/xampp"
-alias androidStudio="cd /mnt/D_partition/Download/Dev/android-studio-ide-193\ 6626763-linux/android-studio/bin && ./studio.sh"
-# alias emulator=$ANDROID_SDK/tools/emulator
-# emulator  @Pixel_2_API_29 
 alias vsc="code ."
-# dev() {
-# 	echo "$1 $2 $3"
-# 	if [ $1 ] && [ $1 = "now" ];then
-# 		echo "starting..."
-# 		/mnt/D_partition/Download/Dev/other/on_start.sh $2 $3 
-# 		# > /dev/null
-# 	else
-# 		cd "/mnt/D_partition/Download/Dev/"$1;
-# 	fi
-# }
-	# does the same as alias dev="cd /mnt/D_partition/Download/Dev"
-	# with an arg ex: dev react or dev now to launch script 
-# alias wifi='nmcli c up id "Gnet-309650"'
-alias vpnc='protonvpn-cli connect -f'
-alias c='protonvpn-cli connect -f'
-alias vpnd='protonvpn-cli disconnect'
-alias d='protonvpn-cli disconnect'
-# xrandr --output eDP-1 --set "scaling mode" "Full" 
+alias dotconf="cd ~/Work/dotfiles && nvim . && cd -"
+alias nvimconf="cd ~/.config/nvim && nvim && cd -"
+alias ask="cd ~/Work && opencode"
 
-# vim mode
-VI_MODE_SET_CURSOR=true
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# pnpm
-# export PNPM_HOME="/home/mono/.local/share/pnpm"
-# export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# Neovim variants
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
 
-function nvims() {
-  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-    config=""
-  fi
-  NVIM_APPNAME=$config nvim $@
+# Utilities
+alias cat=bat
+alias bios="sudo systemctl reboot --firmware-setup"
+alias godot="/home/mono/.local/share/godot/app_userdata/Godots/versions/Godot_v4_3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux.x86_64"
+alias godotrun="dotnet build && godot"
+
+# ── Functions ────────────────────────────────────────────────────────────────
+# Pick a Neovim config with fzf and launch it.
+nvims() {
+  local items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim") config
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt="Neovim  " --height=~50% --layout=reverse --border --exit-0)
+  [[ -z $config ]] && { echo "Nothing selected"; return 0; }
+  [[ $config == default ]] && config=""
+  NVIM_APPNAME="$config" nvim "$@"
 }
 
-# utils
-changeWorkTree(){
-  # selected=`git worktree list | fzf | cut -d' ' -f1`
-  selected=`git worktree list --porcelain | awk '/^worktree/ {path=$2} /^branch/ {gsub(/refs\/heads\//, "", $2); print $2 " => " path}' | fzf | cut -d' ' -f3`
-  cd $selected
+# Jump to a git worktree
+changeWorkTree() {
+  local selected
+  selected=$(git worktree list --porcelain \
+    | awk '/^worktree/{p=$2} /^branch/{gsub("refs/heads/","",$2); print $2 " => " p}' \
+    | fzf | cut -d' ' -f3)
+  [[ -n $selected ]] && cd "$selected"
 }
 alias gw=changeWorkTree
-mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
 
-pairQR() {
-  local name="studio-$(openssl rand -hex 6)"
-  local pass="$(openssl rand -hex 6)"
-  local svc
+mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2"; }
 
-  qrencode -t ANSIUTF8 "WIFI:T:ADB;S:${name};P:${pass};;"
-  echo "Phone: Wireless debugging → Pair device with QR code → scan the above"
-
-  for i in {1..60}; do
-    svc=$(adb mdns services 2>/dev/null \
-      | awk -v n="$name" '$1==n && /_adb-tls-pairing/ {print $3}')
-    [[ -n $svc ]] && break
-    sleep 1
-  done
-
-  [[ -z $svc ]] || { adb pair "$svc" "$pass" && connectDevice; return }
-  echo "timed out — phone and Mac on the same network?"
-  return 1
+game() {
+  z "$1" && nvim . --listen ./godothost
 }
 
-connectDevice(){
-  devices=( $(adb devices | awk '/device$/ {print $1}') )
-  if (( ${#devices[@]} == 1 )); then
-    selected=$devices[1]
-  else
-    selected=$(echo $devices | tr ' ' '\n' | fzf)
-  fi
-  adb -s $selected reverse tcp:8081 tcp:8081
-  echo "connected!"
-}
-game(){
-  z $1 && nvim . --listen ./godothost
-}
-
-
-# batter cat
-alias cat=bat
-# z better cd
+# ── External tool integrations ───────────────────────────────────────────────
+# zoxide
 eval "$(zoxide init zsh)"
-alias cd=z
 
-# Godot
-GODOT="/home/mono/.local/share/godot/app_userdata/Godots/versions/Godot_v4_3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux_x86_64/Godot_v4.3-dev2_mono_linux.x86_64"
-alias godot=$GODOT
-alias godotrun="dotnet build && godot"
-alias bios="sudo systemctl reboot --firmware-setup"
+# starship (same prompt as Omarchy's bash setup)
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
+
+# swww override
 swww() { awww "$@"; }
 
-# export PATH="$GODOT:$PATH"
-
-# mac iterm2
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export EDITOR='nvim'
-export TERMINAL='ghostty'
-
-fm6000 -r -c random
-
-# Added by Antigravity
-export PATH="/Users/mohamednouri/.antigravity/antigravity/bin:$PATH"
-eval "$(tv init zsh)"
+# television (tv)
+if command -v tv >/dev/null 2>&1; then
+  eval "$(tv init zsh)"
+fi
