@@ -31,6 +31,17 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR='nvim'
 export TERMINAL='ghostty'
 
+# ── History ──────────────────────────────────────────────────────────────────
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt EXTENDED_HISTORY        # timestamps
+setopt SHARE_HISTORY           # sync across open shells
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE       # skip commands starting with a space
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+
 # ── Plugin replacements (No Oh My Zsh) ───────────────────────────────────────
 # sudo
 alias sudo='sudo '

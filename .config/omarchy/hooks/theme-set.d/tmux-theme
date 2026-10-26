@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Re-theme a running tmux after the Omarchy theme changes.
+# The hook is called with the name of the new theme; unused here.
+exec "$HOME/.config/tmux/theme-colors.sh"

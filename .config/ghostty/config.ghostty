@@ -10,8 +10,9 @@ window-padding-x = 0
 window-padding-y = 0
 window-padding-balance
 
+# Hyprland does the blurring (decoration:blur). background-blur is macOS/KDE
+# only and is ignored on Wayland/Hyprland, so it is intentionally not set.
 background-opacity = 0.95
-background-blur = true
 
 # refresh with: ctrl+shift+, (M key in querty)
 

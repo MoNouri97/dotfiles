@@ -21,4 +21,9 @@
       },
     },
   },
+  "agent": {
+    "title": {
+      "model": "ollama/qwen3:4b",
+    },
+  },
 }
