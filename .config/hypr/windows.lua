@@ -8,9 +8,16 @@
 o.window({ tag = "chromium-based-browser" }, { idle_inhibit = "fullscreen" })
 o.window({ tag = "firefox-based-browser" }, { idle_inhibit = "fullscreen" })
 o.window(
-	"^(mpv|vlc|org\\.kde\\.kdenlive|com\\.github\\.rafostar\\.Clapper|[Cc]elluloid|[Ss]potify)$",
+	"^(mpv|org\\.kde\\.kdenlive|com\\.github\\.rafostar\\.Clapper|io\\.github\\.celluloid_player\\.Celluloid|Celluloid|[Ss]potify)$",
 	{ idle_inhibit = "fullscreen" }
 )
+
+-- ── Celluloid ────────────────────────────────────────────────────────────────
+-- Video player: float centred instead of tiling, and stay fully opaque so the
+-- global fade doesn't tint the picture. Window size is left to Celluloid's own
+-- remembered size, so resizing it once sticks.
+local celluloid = "^(io\\.github\\.celluloid_player\\.Celluloid)$"
+o.window({ class = celluloid }, { float = true, center = true, opacity = "1 1" })
 
 -- ── Godot editor ─────────────────────────────────────────────────────────────
 local godot = "^(org\\.godotengine\\.Editor)$"

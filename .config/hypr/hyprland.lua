@@ -40,6 +40,11 @@ require("default.hypr.toggles")
 -- (Ghostty, Nautilus, etc.). Hiding the protocol from GTK restores the blur.
 hl.env("GDK_WAYLAND_DISABLE", "ext_background_effect_manager_v1")
 
+-- Proton VPN persists a JSON session containing newlines. gnome-keyring's
+-- passwordless text keyring cannot store newlines and rejects the whole file
+-- on the next load, so keep Proton on its JSON file backend.
+hl.env("PROTON_LOADER_OVERRIDES", "keyring=json")
+
 do
 	local path = (os.getenv("XDG_CONFIG_HOME") or os.getenv("HOME") .. "/.config") .. "/hypr/hyprmoncfg-monitors.lua"
 	local file = io.open(path, "r")
