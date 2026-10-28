@@ -73,8 +73,8 @@ fi
 
 # ── Aliases (merged from .bashrc and .zshrc) ─────────────────────────────────
 # ls aliases (eza)
-alias l='eza --classify=auto -h --group-directories-first --icons=auto'
-alias ll='ls -l'
+alias l='eza --all --classify=auto -h --group-directories-first --icons=auto'
+alias ll='ls -l --all'
 alias la='ls -a'
 alias lla='ls -la'
 alias lsd='ls -d'
