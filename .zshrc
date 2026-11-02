@@ -128,6 +128,10 @@ alias vsc="code ."
 alias dotconf="cd ~/Work/dotfiles && nvim . && cd -"
 alias nvimconf="cd ~/.config/nvim && nvim && cd -"
 alias ask="cd ~/Work && opencode"
+alias cmbuild=~/Work/dotfiles/my-scripts/codemagic-build.sh
+
+# Machine-local secrets (CM_API_TOKEN, ...), lives outside the repo
+[[ -r ~/Work/.secrets.zsh ]] && source ~/Work/.secrets.zsh
 
 # Neovim variants
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
