@@ -171,9 +171,12 @@ game() {
 }
 
 # ── External tool integrations ───────────────────────────────────────────────
-# zoxide
+# zoxide: --cmd cd makes cd the zoxide jump (and cdi the fzf picker), so plain
+# `cd path` still works while `cd partial-name` jumps to a known directory.
 if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
+  eval "$(zoxide init zsh --cmd cd)"
+  alias z=cd
+  alias zi=cdi
 fi
 
 # starship (same prompt as Omarchy's bash setup)
