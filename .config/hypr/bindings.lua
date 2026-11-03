@@ -48,6 +48,11 @@ o.bind("SUPER + E", "File manager", { omarchy = "nautilus" })
 o.bind("SUPER + B", "Browser", { omarchy = "browser" })
 o.bind("SUPER + ALT + B", "Browser (private)", { omarchy = "browser --private" })
 
+-- SUPER+SHIFT+ESCAPE: restart the Omarchy shell (recover from a frozen bar or
+-- notifications). Hyprland handles this bind, so it still fires while the
+-- shell is hung. SUPER+ESCAPE (system menu) is unchanged.
+o.bind("SUPER + SHIFT + ESCAPE", "Restart Omarchy shell", "omarchy restart shell")
+
 -- SUPER+SHIFT+P was "Google Photos in omarchy"; now takes a region screenshot.
 hl.unbind("SUPER + SHIFT + P")
 o.bind("SUPER + SHIFT + P", "Screenshot (region)", "omarchy capture screenshot region")
