@@ -40,9 +40,22 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR='nvim'
 export TERMINAL='ghostty'
 
-# nvm
+# nvm — lazy-loaded: sourcing nvm.sh costs hundreds of ms per shell, so put the
+# default node on PATH directly and only load nvm the first time `nvm` runs.
+# A non-numeric default alias (node, lts/*) falls back to the newest installed.
 export NVM_DIR="$HOME/.nvm"
-[[ -s $NVM_DIR/nvm.sh ]] && source "$NVM_DIR/nvm.sh"
+if [[ -d $NVM_DIR/versions/node ]]; then
+  _nvm_default=$(<"$NVM_DIR/alias/default" 2>/dev/null)
+  _nvm_bin=( $NVM_DIR/versions/node/v${_nvm_default#v}*/bin(Nn) )
+  [[ -z $_nvm_default || -z $_nvm_bin ]] && _nvm_bin=( $NVM_DIR/versions/node/*/bin(Nn) )
+  [[ -n $_nvm_bin ]] && path=($_nvm_bin[-1] $path)
+  unset _nvm_default _nvm_bin
+fi
+nvm() {
+  unfunction nvm
+  [[ -s $NVM_DIR/nvm.sh ]] && source "$NVM_DIR/nvm.sh"
+  nvm "$@"
+}
 
 # ── History ──────────────────────────────────────────────────────────────────
 HISTFILE="$HOME/.zsh_history"
