@@ -40,6 +40,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR='nvim'
 export TERMINAL='ghostty'
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[[ -s $NVM_DIR/nvm.sh ]] && source "$NVM_DIR/nvm.sh"
+
 # ── History ──────────────────────────────────────────────────────────────────
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=50000
@@ -71,6 +75,9 @@ fi
 
 # Zsh plugins: Arch ships them under /usr/share/zsh/plugins, Homebrew under
 # $(brew --prefix)/share — on Apple Silicon /opt/homebrew, on Intel /usr/local.
+# Missing plugins are skipped silently, so install them on every new machine:
+#   macOS: brew install zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
+#   Arch:  sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
 if [[ $IS_MAC == 1 ]]; then
   ZSH_PLUGIN_DIRS=(/opt/homebrew/share /usr/local/share)
 else
@@ -172,6 +179,37 @@ mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2"; }
 
 game() {
   z "$1" && nvim . --listen ./godothost
+}
+
+pairQR() {
+  local name="studio-$(openssl rand -hex 6)"
+  local pass="$(openssl rand -hex 6)"
+  local svc
+
+  qrencode -t ANSIUTF8 "WIFI:T:ADB;S:${name};P:${pass};;"
+  echo "Phone: Wireless debugging → Pair device with QR code → scan the above"
+
+  for i in {1..60}; do
+    svc=$(adb mdns services 2>/dev/null \
+      | awk -v n="$name" '$1==n && /_adb-tls-pairing/ {print $3}')
+    [[ -n $svc ]] && break
+    sleep 1
+  done
+
+  [[ -z $svc ]] || { adb pair "$svc" "$pass" && connectDevice; return }
+  echo "timed out — phone and Mac on the same network?"
+  return 1
+}
+
+connectDevice(){
+  devices=( $(adb devices | awk '/device$/ {print $1}') )
+  if (( ${#devices[@]} == 1 )); then
+    selected=$devices[1]
+  else
+    selected=$(echo $devices | tr ' ' '\n' | fzf)
+  fi
+  adb -s $selected reverse tcp:8081 tcp:8081
+  echo "connected!"
 }
 
 # ── External tool integrations ───────────────────────────────────────────────
