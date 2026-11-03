@@ -230,6 +230,8 @@ connectDevice(){
 # `cd path` still works while `cd partial-name` jumps to a known directory.
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh --cmd cd)"
+  unalias cd 2>/dev/null
+  unfunction zd 2>/dev/null
   alias z=cd
   alias zi=cdi
 fi
