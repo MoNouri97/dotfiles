@@ -45,22 +45,7 @@ hl.env("GDK_WAYLAND_DISABLE", "ext_background_effect_manager_v1")
 -- on the next load, so keep Proton on its JSON file backend.
 hl.env("PROTON_LOADER_OVERRIDES", "keyring=json")
 
-do
-	local path = (os.getenv("XDG_CONFIG_HOME") or os.getenv("HOME") .. "/.config") .. "/hypr/hyprmoncfg-monitors.lua"
-	local file = io.open(path, "r")
-	if file then
-		file:close()
-		dofile(path)
-	end
-end
+require("hypr.maestro") -- maestro
 
 -- Added by hyprmoncfg: its generated monitor rules load last, so nothing before this can override the applied layout.
-do
-	local path = os.getenv("HOME") .. "/.config/hypr/hyprmoncfg-monitors.lua"
-	local file = io.open(path, "r")
-	if file then
-		file:close()
-		dofile(path)
-	end
-end
-require("hypr.maestro") -- maestro
+do local path = os.getenv("HOME") .. "/.config/hypr/hyprmoncfg-monitors.lua"; local file = io.open(path, "r"); if file then file:close(); dofile(path) end end
