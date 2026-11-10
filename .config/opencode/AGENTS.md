@@ -1,7 +1,11 @@
 # Global rules
 
-## Always ask before touching the live desktop
+## Always ask before touching the live desktop (Omarchy Linux)
 
+- Scope: this applies to my Omarchy/Hyprland Linux desktop. It does not apply
+  to the iOS Simulator on macOS when I ask for a simulator test or flow: then
+  boot, launch, tap, type, swipe and screenshot inside the simulator freely
+  for that task. Still ask before touching other macOS apps or windows.
 - Anything that changes the live desktop UI requires my explicit agreement
   first — every time, not just when I seem busy. This includes opening or
   closing menus/launchers, launching apps, changing focus or workspaces,
