@@ -65,3 +65,10 @@ hl.unbind("SUPER + CTRL + LEFT")
 o.bind("SUPER + CTRL + LEFT", "Previous workspace", hl.dsp.focus({ workspace = "r-1" })) --(r is for current monitro)
 hl.unbind("SUPER + CTRL + RIGHT")
 o.bind("SUPER + CTRL + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "r+1" }))
+
+-- Dictation keys from before Alt + Space and Right Alt became the defaults.
+-- Remove these lines to give the keys back to applications.
+if o.dictation_installed and o.dictation_installed() then
+  o.bind("SUPER + CTRL + X", "Toggle dictation", "omarchy-dictation toggle")
+  o.bind_hold("F9", "Start dictation (push-to-talk)", "omarchy-dictation start", "Stop dictation (push-to-talk)", "omarchy-dictation stop")
+end
